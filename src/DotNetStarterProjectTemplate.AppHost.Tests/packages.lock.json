@@ -758,10 +758,18 @@
       "dotnetstarterprojecttemplate.apphost": {
         "type": "Project",
         "dependencies": {
+          "Aspire.Dashboard.Sdk.linux-x64": "[9.0.0, )",
           "Aspire.Dashboard.Sdk.win-x64": "[9.0.0, )",
           "Aspire.Hosting.AppHost": "[9.0.0, )",
+          "Aspire.Hosting.Orchestration.linux-x64": "[9.0.0, )",
           "Aspire.Hosting.Orchestration.win-x64": "[9.0.0, )"
         }
+      },
+      "Aspire.Dashboard.Sdk.linux-x64": {
+        "type": "CentralTransitive",
+        "requested": "[9.0.0, )",
+        "resolved": "9.0.0",
+        "contentHash": "H/EmpV4ERya0dm1kmzu2qQzuL6HIiX4aT/foXvi6ynlqEUX9nl2zAYYjVnrkRwHoBev4ScXhx41b5FjhsiktTA=="
       },
       "Aspire.Hosting.AppHost": {
         "type": "CentralTransitive",
@@ -790,6 +798,12 @@
           "Microsoft.Extensions.Primitives": "9.0.0",
           "Polly.Core": "8.4.2"
         }
+      },
+      "Aspire.Hosting.Orchestration.linux-x64": {
+        "type": "CentralTransitive",
+        "requested": "[9.0.0, )",
+        "resolved": "9.0.0",
+        "contentHash": "4MBl+WGzgk5OR3FOGI8SILaDu7im5ZFMeUcZe4dsRNGATp6SUdO+dDR3AzbXKCEOVE5xI80dJRiUi5Necwq/2Q=="
       },
       "Microsoft.Extensions.Hosting": {
         "type": "CentralTransitive",

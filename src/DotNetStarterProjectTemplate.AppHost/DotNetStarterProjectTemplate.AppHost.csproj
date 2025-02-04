@@ -6,7 +6,9 @@
     <UserSecretsId>dotnet-starter-project-template-apphost</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Aspire.Dashboard.Sdk.linux-x64" />
     <PackageReference Include="Aspire.Hosting.AppHost" />
+    <PackageReference Include="Aspire.Hosting.Orchestration.linux-x64" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotNetStarterProjectTemplate.Api\DotNetStarterProjectTemplate.Api.csproj" />
