@@ -1,4 +1,6 @@
-﻿namespace DotNetStarterProjectTemplate.Api.Weather;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace DotNetStarterProjectTemplate.Api.Weather;
 
 internal static class WeatherEndpoints
 {
@@ -12,8 +14,11 @@ internal static class WeatherEndpoints
             .WithOpenApi();
     }
 
-    private static IResult GetWeatherForecast()
+    private static IResult GetWeatherForecast([FromServices] ILoggerFactory loggerFactory)
     {
+        var logger = loggerFactory.CreateLogger(nameof(WeatherEndpoints));
+        logger.LogInformation("Retrieving weather forecasts...");
+
         var summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"

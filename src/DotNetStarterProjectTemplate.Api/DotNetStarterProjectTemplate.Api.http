@@ -1,4 +1,9 @@
-@DotNetStarterProjectTemplate.Api_HostAddress = http://localhost:5151
+@DotNetStarterProjectTemplate.Api_HostAddress = https://localhost:7225
+
+GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
 
 GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/api/weather/forecast/
 Accept: application/json
