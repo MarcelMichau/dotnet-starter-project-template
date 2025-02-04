@@ -1,6 +1,0 @@
-@NetStarterProject.Api_HostAddress = http://localhost:5151
-
-GET {{NetStarterProject.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

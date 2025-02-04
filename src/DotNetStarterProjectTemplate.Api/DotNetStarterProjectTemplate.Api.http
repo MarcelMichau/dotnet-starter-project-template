@@ -1,0 +1,6 @@
+@DotNetStarterProjectTemplate.Api_HostAddress = http://localhost:5151
+
+GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/api/weather/forecast/
+Accept: application/json
+
+###

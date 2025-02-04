@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Marcel Michau",
+  "classifications": [
+    "Web API",
+    "API"
+  ],
+  "identity": "MarcelMichau.DotNetStarterProjectTemplate",
+  "name": "Marcel Michau - .NET Starter Project Template",
+  "shortName": "mm-dotnet-starter",
+  "sourceName": "DotNetStarterProjectTemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "LICENSE",
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        ".vs/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/.git/**",
+        "*.nuspec",
+        "**/node_modules/**",
+        "**/[Ll]ogs/**",
+        ".idea/**/*"
+      ]
+    }
+  ],
+  "symbols": {
+    "appFriendlyName": {
+      "type": "parameter",
+      "defaultValue": "My Awesome App",
+      "replaces": ".NET Starter Project Template"
+    },
+    "appKebabName": {
+      "type": "parameter",
+      "defaultValue": "my-awesome-app",
+      "replaces": "dotnet-starter-project-template"
+    }
+  }
+}
