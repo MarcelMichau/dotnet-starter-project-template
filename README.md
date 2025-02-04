@@ -2,7 +2,7 @@
 
 This is a .NET project template which serves as a good starting point to scale to more complex projects.
 
-[![Build](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/dotnet.yml)
+[![Build + Test](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/build-test.yml/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/build-test.yml)
 [![CodeQL](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql)
 [![Nuget](https://img.shields.io/nuget/v/MarcelMichau.Templates.DotNetStarterProject?label=NuGet)](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject)
 
