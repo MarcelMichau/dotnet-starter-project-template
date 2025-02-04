@@ -31,5 +31,5 @@ It has the following notable features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.0.2
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.0.3
 ```
