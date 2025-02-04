@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>dotnet-starter-project-template-apphost</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetStarterProjectTemplate.Api\DotNetStarterProjectTemplate.Api.csproj" />
+    <ProjectReference Include="..\DotNetStarterProjectTemplate.Worker\DotNetStarterProjectTemplate.Worker.csproj" />
+  </ItemGroup>
+</Project>
