@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<PackageType>Template</PackageType>
-		<PackageVersion>1.0.3</PackageVersion>
+		<PackageVersion>1.0.4</PackageVersion>
 		<PackageId>MarcelMichau.Templates.DotNetStarterProject</PackageId>
 		<Title>.NET Starter Project Template</Title>
 		<Authors>Marcel Michau</Authors>
@@ -18,11 +18,13 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/MarcelMichau/dotnet-starter-project-template</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<Content Include="**\*" Exclude="**\bin\**;**\obj\**;.vs\**;.vscode\**;**\*.user;.git\**;LICENSE;README.md;DotNetStarterProjectTemplate.Package.csproj" />
     <Compile Remove="**\*" />
+		<None Include=".template.config\icon.png" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
 	<ItemGroup>
