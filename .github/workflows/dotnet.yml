@@ -23,7 +23,7 @@ jobs:
         global-json-file: global.json
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore DotNetStarterProjectTemplate.sln
 
     - name: Build
       run: dotnet build DotNetStarterProjectTemplate.sln --no-restore
