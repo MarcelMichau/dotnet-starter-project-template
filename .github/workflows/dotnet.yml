@@ -31,4 +31,4 @@ jobs:
     - name: Test
       run: |
         dotnet dev-certs https --trust
-        dotnet test --no-build --verbosity normal
+        dotnet test DotNetStarterProjectTemplate.sln --no-build --verbosity normal
