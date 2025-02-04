@@ -1,0 +1,61 @@
+name: Package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'DotNetStarterProjectTemplate.Package.csproj'
+
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+  DOTNET_NOLOGO: true
+  NuGetDirectory: ${{ github.workspace}}/nuget
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  create_nuget:
+    name: Pack Template NuGet Package
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Create Template Package
+        run: dotnet pack DotNetStarterProjectTemplate.Package.csproj --configuration Release --output ${{ env.NuGetDirectory }}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: nuget
+          if-no-files-found: error
+          retention-days: 7
+          path: ${{ env.NuGetDirectory }}/*.nupkg
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [ create_nuget ]
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: nuget
+          path: ${{ env.NuGetDirectory }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Publish NuGet package
+        run: |
+          foreach($file in (Get-ChildItem "${{ env.NuGetDirectory }}" -Recurse -Include *.nupkg)) {
+              dotnet nuget push $file --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          }

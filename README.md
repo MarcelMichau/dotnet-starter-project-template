@@ -1,16 +1,16 @@
-<h1 align="center">
-  .NET Starter Project Template
-</h1>
+# .NET Starter Project Template
 
-<p align="center">
 This is a .NET project template which serves as a good starting point to scale to more complex projects.
-</p>
+
+[![Build](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/dotnet.yml)
+[![CodeQL](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql)
+[![Nuget](https://img.shields.io/nuget/v/MarcelMichau.Templates.DotNetStarterProject?label=NuGet)](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject)
 
 [Open in github.dev](https://github.dev/MarcelMichau/dotnet-starter-project-template)
 
 This template includes some opinionated defaults based on personal preference.
 
-It has the following notable features & preconfigured defaults:
+It has the following notable features & pre-configured defaults:
 
 - ASP.NET Core Minimal API project
 - ASP.NET Core Worker project - for background/long-running tasks
@@ -26,3 +26,10 @@ It has the following notable features & preconfigured defaults:
 - Centralised project configuration using `Directory.Build.Props` - to consolidate duplicated project properties across projects
 - Basic `index.html` landing page for the API project - to avoid a 404 when navigating to the root URL
 - Default `global.json` file with roll-forward policy set to `latestFeature` to always use the latest installed feature band
+
+## Getting Started
+
+Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
+```
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.0.1
+```

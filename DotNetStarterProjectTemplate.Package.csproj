@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<PackageType>Template</PackageType>
+		<PackageVersion>1.0.1</PackageVersion>
+		<PackageId>MarcelMichau.Templates.DotNetStarterProject</PackageId>
+		<Title>.NET Starter Project Template</Title>
+		<Authors>Marcel Michau</Authors>
+		<Description>.NET project template which serves as a good starting point to scale to more complex projects</Description>
+		<PackageTags>project;template;csharp;dotnet;aspire</PackageTags>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+		<PackageProjectUrl>https://github.com/MarcelMichau/dotnet-starter-project-template</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/MarcelMichau/dotnet-starter-project-template</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="**\*" Exclude="**\bin\**;**\obj\**;.vs\**;.vscode\**;**\*.user;.git\**;LICENSE;README.md;DotNetStarterProjectTemplate.Package.csproj" />
+    <Compile Remove="**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>
