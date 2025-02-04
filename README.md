@@ -31,6 +31,21 @@ It has the following notable features & pre-configured defaults:
 ## Getting Started
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
+```bash
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.0.6
 ```
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.0.5
+
+After installation, create a new project using the template:
+```bash
+dotnet new mm-dotnet-starter -o MyAwesomeApp
+```
+
+Change into the Aspire AppHost project
+```bash
+cd MyAwesomeApp\src\MyAwesomeApp.AppHost
+```
+
+Run the project
+```bash
+dotnet run
 ```
