@@ -21,3 +21,4 @@ It has the following notable features:
 - [NuGet Central Package Management](https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management)
 - [NuGet Lock Files Enabled](https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#enabling-the-lock-file)
 - Centralised project configuration using `Directory.Build.Props` - to consolidate duplicated project properties across projects
+- Basic `index.html` landing page for the API project - so that you don't get a 404 when navigating to the root URL
