@@ -10,13 +10,15 @@ This is a .NET project template which serves as a good starting point to scale t
 
 This template includes some opinionated defaults based on personal preference.
 
-It has the following notable features:
+It has the following notable features & preconfigured defaults:
 
 - ASP.NET Core Minimal API project
 - ASP.NET Core Worker project - for background/long-running tasks
 - Docker support using `Dockerfile`
 - .NET Aspire Support
 - .NET Aspire Test Project for E2E tests
+- GitHub Actions Workflow for building & testing solution
+- Dependabot configuration for automatic dependency updates
 - [NuGet Package Auditing](https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages)
 - [NuGet Central Package Management](https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management)
 - [NuGet Lock Files Enabled](https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#enabling-the-lock-file)
