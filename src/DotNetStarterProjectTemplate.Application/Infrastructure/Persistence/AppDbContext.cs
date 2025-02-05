@@ -1,6 +1,7 @@
 ﻿using DotNetStarterProjectTemplate.Application.Shared;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using DotNetStarterProjectTemplate.Application.Domain.Things;
 
 namespace DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
 
@@ -12,6 +13,8 @@ public sealed class AppDbContext : DbContext
     {
         ArgumentNullException.ThrowIfNull(options);
     }
+
+    public DbSet<Thing> Things => Set<Thing>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

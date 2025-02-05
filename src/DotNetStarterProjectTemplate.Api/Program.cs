@@ -1,19 +1,16 @@
 using DotNetStarterProjectTemplate.Api.Configuration;
-using DotNetStarterProjectTemplate.Api.Weather;
+using DotNetStarterProjectTemplate.Api.Things;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults()
     .AddApplicationServicesConfiguration();
 
-builder.Services.AddOpenApi();
+builder.AddOpenApiConfiguration();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.MapOpenApiConfiguration();
 
 app.UseHttpsRedirection();
 
@@ -21,6 +18,6 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.MapDefaultEndpoints();
-app.MapWeatherEndpoints();
+app.MapThingEndpoints();
 
 app.Run();

@@ -5,7 +5,7 @@ Accept: application/json
 
 ###
 
-GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/api/weather/forecast/
+GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/api/things
 Accept: application/json
 
 ###
