@@ -1,7 +1,16 @@
+using DotNetStarterProjectTemplate.Application.Shared;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
-builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>("dotnet-starter-project-template-api");
+var database = builder.AddSqlServer("sql-server")
+    .AddDatabase("database");
 
-builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>("dotnet-starter-project-template-worker");
+builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>($"{Constants.Key}-api")
+    .WithReference(database)
+    .WaitFor(database);
+
+builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>($"{Constants.Key}-worker")
+    .WithReference(database)
+    .WaitFor(database);
 
 builder.Build().Run();
