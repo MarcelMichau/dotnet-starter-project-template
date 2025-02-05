@@ -15,8 +15,10 @@ It has the following notable features & pre-configured defaults:
 - ASP.NET Core Minimal API project
 - ASP.NET Core Worker project - for background/long-running tasks
 - Docker support using `Dockerfile`
-- .NET Aspire Support
+- [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) Support
 - .NET Aspire Test Project for E2E tests
+- [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) with SQL Server for persistence
+- Pretty OpenAPI docs using [Scalar](https://github.com/scalar/scalar)
 - GitHub Actions Workflow for building & testing solution
 - Dependabot configuration for automatic dependency updates
 - [NuGet Package Auditing](https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages)
@@ -32,7 +34,7 @@ It has the following notable features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.0.6
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.1.0
 ```
 
 After installation, create a new project using the template:
@@ -48,4 +50,11 @@ cd MyAwesomeApp\src\MyAwesomeApp.AppHost
 Run the project
 ```bash
 dotnet run
+```
+
+## Adding EF Core Migrations
+
+From the project root, run the following:
+```bash
+dotnet ef migrations add <migration-name> -p .\src\MyAwesomeApp.Application\ -s .\src\MyAwesomeApp.Api\ -o Infrastructure\Persistence\Migrations
 ```

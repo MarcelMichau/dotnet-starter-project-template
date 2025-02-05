@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotNetStarterProjectTemplate.AppHost\DotNetStarterProjectTemplate.AppHost.csproj" />
+    <ProjectReference Include="..\DotNetStarterProjectTemplate.Application\DotNetStarterProjectTemplate.Application.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Net" />

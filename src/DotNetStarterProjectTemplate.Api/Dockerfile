@@ -21,7 +21,6 @@ COPY ["src/DotNetStarterProjectTemplate.Api/packages.lock.json", "src/DotNetStar
 COPY ["src/DotNetStarterProjectTemplate.ServiceDefaults/DotNetStarterProjectTemplate.ServiceDefaults.csproj", "src/DotNetStarterProjectTemplate.ServiceDefaults/"]
 COPY ["src/DotNetStarterProjectTemplate.ServiceDefaults/packages.lock.json", "src/DotNetStarterProjectTemplate.ServiceDefaults/"]
 
-
 RUN dotnet restore "./src/DotNetStarterProjectTemplate.Api/DotNetStarterProjectTemplate.Api.csproj"
 COPY . .
 WORKDIR "/src/src/DotNetStarterProjectTemplate.Api"

@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DotNetStarterProjectTemplate.Application\DotNetStarterProjectTemplate.Application.csproj" />
     <ProjectReference Include="..\DotNetStarterProjectTemplate.ServiceDefaults\DotNetStarterProjectTemplate.ServiceDefaults.csproj" />
   </ItemGroup>
 </Project>

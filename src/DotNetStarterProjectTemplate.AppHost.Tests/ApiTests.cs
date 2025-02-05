@@ -1,9 +1,13 @@
+using DotNetStarterProjectTemplate.Application.Shared;
+
 namespace DotNetStarterProjectTemplate.AppHost.Tests;
 
 public sealed class ApiTests
 {
+    private const string ApiProjectName = $"{Constants.Key}-api";
+
     [Fact]
-    public async Task GetWeatherForecastReturnsOkStatusCode()
+    public async Task GetThingsReturnsOkStatusCode()
     {
         // Arrange
         var appHost = await DistributedApplicationTestingBuilder
@@ -20,13 +24,13 @@ public sealed class ApiTests
         await app.StartAsync();
 
         // Act
-        var httpClient = app.CreateHttpClient("dotnet-starter-project-template-api");
+        var httpClient = app.CreateHttpClient(ApiProjectName);
 
         await resourceNotificationService
-            .WaitForResourceAsync("dotnet-starter-project-template-api", KnownResourceStates.Running)
+            .WaitForResourceAsync(ApiProjectName, KnownResourceStates.Running)
             .WaitAsync(TimeSpan.FromSeconds(30));
 
-        var response = await httpClient.GetAsync("/api/weather/forecast");
+        var response = await httpClient.GetAsync("/api/things");
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
