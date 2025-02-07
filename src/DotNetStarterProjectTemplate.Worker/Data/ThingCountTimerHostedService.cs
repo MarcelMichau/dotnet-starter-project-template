@@ -1,9 +1,9 @@
 using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotNetStarterProjectTemplate.Worker;
+namespace DotNetStarterProjectTemplate.Worker.Data;
 
-internal sealed class Worker(ILogger<Worker> logger, IServiceScopeFactory serviceScopeFactory)
+internal sealed class ThingCountTimerHostedService(ILogger<ThingCountTimerHostedService> logger, IServiceScopeFactory serviceScopeFactory)
     : BackgroundService
 {
     private readonly ILogger _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -18,7 +18,7 @@ internal sealed class Worker(ILogger<Worker> logger, IServiceScopeFactory servic
         while (await _timer.WaitForNextTickAsync(stoppingToken))
             try
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                _logger.LogInformation("ThingCountTimerHostedService running at: {time}", DateTimeOffset.Now);
                 await GetTotalSurveys(stoppingToken);
             }
             catch (Exception e)

@@ -44,10 +44,15 @@
       "defaultValue": "My Awesome App",
       "replaces": ".NET Starter Project Template"
     },
-    "appKebabName": {
+    "appId": {
       "type": "parameter",
       "defaultValue": "my-awesome-app",
       "replaces": "dotnet-starter-project-template"
+    },
+    "appAbbreviation": {
+      "type": "parameter",
+      "defaultValue": "myapp",
+      "replaces": "dspt"
     }
   }
 }

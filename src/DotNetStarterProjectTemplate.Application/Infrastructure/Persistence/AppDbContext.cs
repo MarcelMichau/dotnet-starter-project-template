@@ -7,7 +7,7 @@ namespace DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
 
 public sealed class AppDbContext : DbContext
 {
-    public const string DefaultSchema = Constants.Name;
+    public const string DefaultSchema = Constants.AppName;
 
     public AppDbContext(DbContextOptions options) : base(options)
     {

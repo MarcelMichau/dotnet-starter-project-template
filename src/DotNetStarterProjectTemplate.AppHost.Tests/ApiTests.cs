@@ -4,7 +4,7 @@ namespace DotNetStarterProjectTemplate.AppHost.Tests;
 
 public sealed class ApiTests
 {
-    private const string ApiProjectName = $"{Constants.Key}-api";
+    private const string ApiProjectName = $"{Constants.AppId}-api";
 
     [Fact]
     public async Task GetThingsReturnsOkStatusCode()
