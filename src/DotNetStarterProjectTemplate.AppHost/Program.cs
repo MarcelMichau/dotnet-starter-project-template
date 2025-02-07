@@ -18,13 +18,13 @@ else
         .AddDatabase("database");
 }
 
-builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>($"{Constants.AppAbbreviation}-api")
-    .WithReference(database)
-    .WaitFor(database)
-    .WithExternalHttpEndpoints();
-
-builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>($"{Constants.AppAbbreviation}-worker")
+var worker = builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>($"{Constants.AppAbbreviation}-worker")
     .WithReference(database)
     .WaitFor(database);
+
+builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>($"{Constants.AppAbbreviation}-api")
+    .WithReference(database)
+    .WaitFor(worker)
+    .WithExternalHttpEndpoints();
 
 builder.Build().Run();
