@@ -34,15 +34,15 @@
       },
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
         "type": "Direct",
-        "requested": "[1.21.0, )",
-        "resolved": "1.21.0",
-        "contentHash": "8NudeHOE56YsY59HYY89akRMup8Ho+7Y3cADTGjajjWroXVU9RQai2nA6PfteB8AuzmRHZ5NZQB2BnWhQEul5g=="
+        "requested": "[1.21.1, )",
+        "resolved": "1.21.1",
+        "contentHash": "uOr+MTuP+/RccXnWptvh7D34GVWMsRPC/qRnEm38xsdMGZnWU7oWgJi+m4sIWLa5l5PHTcXuhMY/sT+UO/BKRw=="
       },
       "Scalar.AspNetCore": {
         "type": "Direct",
-        "requested": "[2.0.11, )",
-        "resolved": "2.0.11",
-        "contentHash": "qX9DF2V9uOVcScLdU/6kD11n5i+h9bnFzuWJTRxTBISCfAKh0y/5F6gYvueXkYeluxzOW9LdeaM1fpwj63YfuA=="
+        "requested": "[2.0.12, )",
+        "resolved": "2.0.12",
+        "contentHash": "kMunSAka+sqUakPLVxpXN/3FtvbAbm4zAbAAlC/8ODZpB6eZQaIl0G4Ynsx6HLn47lfiVIqP1ne69Dn/LdjQ0g=="
       },
       "Azure.Core": {
         "type": "Transitive",
