@@ -1,4 +1,5 @@
-﻿using DotNetStarterProjectTemplate.Application.Domain.Things;
+﻿using DotNetStarterProjectTemplate.Api.Filters;
+using DotNetStarterProjectTemplate.Application.Domain.Things;
 using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,8 @@ internal static class ThingEndpoints
 {
     internal static void MapThingEndpoints(this WebApplication app)
     {
-        var adminGroup = app.MapGroup("/api/things");
+        var adminGroup = app.MapGroup("/api/things")
+            .AddEndpointFilter<RequestLoggingEndpointFilter>();
 
         adminGroup.MapGet("/", GetThings)
             .WithName(nameof(GetThings))
@@ -37,21 +39,15 @@ internal static class ThingEndpoints
             .WithOpenApi();
     }
 
-    private static async Task<Ok<List<ThingModel>>> GetThings(ILoggerFactory loggerFactory, AppDbContext context)
+    private static async Task<Ok<List<ThingModel>>> GetThings(AppDbContext context)
     {
-        var logger = loggerFactory.CreateLogger(nameof(ThingEndpoints));
-        logger.LogInformation("Retrieving things...");
-
         var things = await context.Things.AsNoTracking().Select(thing => thing.MapToModel()).ToListAsync();
 
         return TypedResults.Ok(things);
     }
 
-    private static async Task<Results<NotFound, Ok<ThingModel>>> GetThingById(long id, ILoggerFactory loggerFactory, AppDbContext context)
+    private static async Task<Results<NotFound, Ok<ThingModel>>> GetThingById(long id, AppDbContext context)
     {
-        var logger = loggerFactory.CreateLogger(nameof(ThingEndpoints));
-        logger.LogInformation("Retrieving thing with ID {id}...", id);
-
         var thing = await context.Things.AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
         if (thing == null)
         {
@@ -61,11 +57,8 @@ internal static class ThingEndpoints
         return TypedResults.Ok(thing.MapToModel());
     }
 
-    private static async Task<CreatedAtRoute<ThingModel>> CreateThing(ThingModel thing, ILoggerFactory loggerFactory, AppDbContext context)
+    private static async Task<CreatedAtRoute<ThingModel>> CreateThing(ThingModel thing, AppDbContext context)
     {
-        var logger = loggerFactory.CreateLogger(nameof(ThingEndpoints));
-        logger.LogInformation("Creating a new thing...");
-
         var newThing = new Thing
         {
             Name = thing.Name
@@ -78,15 +71,12 @@ internal static class ThingEndpoints
     }
 
     private static async Task<Results<BadRequest, NotFound, Ok<ThingModel>>> UpdateThing(long id,
-        ThingModel updatedThing, ILoggerFactory loggerFactory, AppDbContext context)
+        ThingModel updatedThing, AppDbContext context)
     {
         if (id != updatedThing.Id)
         {
             return TypedResults.BadRequest();
         }
-
-        var logger = loggerFactory.CreateLogger(nameof(ThingEndpoints));
-        logger.LogInformation("Updating thing with ID {id}...", id);
 
         var existingThing = await context.Things.FirstOrDefaultAsync(t => t.Id == id);
         if (existingThing == null)
@@ -100,12 +90,8 @@ internal static class ThingEndpoints
         return TypedResults.Ok(existingThing.MapToModel());
     }
 
-    private static async Task<Results<NotFound, Ok>> DeleteThing(long id, ILoggerFactory loggerFactory,
-        AppDbContext context)
+    private static async Task<Results<NotFound, Ok>> DeleteThing(long id, AppDbContext context)
     {
-        var logger = loggerFactory.CreateLogger(nameof(ThingEndpoints));
-        logger.LogInformation("Deleting thing with ID {id}...", id);
-
         var thing = await context.Things.FirstOrDefaultAsync(t => t.Id == id);
         if (thing == null)
         {
