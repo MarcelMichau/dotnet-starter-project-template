@@ -1,8 +1,7 @@
-﻿using DotNetStarterProjectTemplate.Api.Filters;
-using DotNetStarterProjectTemplate.Application.Domain.Things;
-using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
+﻿using System.ComponentModel;
+using DotNetStarterProjectTemplate.Api.Filters;
+using DotNetStarterProjectTemplate.Application.Features.Things;
 using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.EntityFrameworkCore;
 
 namespace DotNetStarterProjectTemplate.Api.Things;
 
@@ -15,91 +14,75 @@ internal static class ThingEndpoints
 
         adminGroup.MapGet("/", GetThings)
             .WithName(nameof(GetThings))
-            .WithSummary("Returns Things from the DB")
-            .WithOpenApi();
+            .WithSummary("Returns Things from the DB");
 
         adminGroup.MapGet("/{id:long}", GetThingById)
             .WithName(nameof(GetThingById))
-            .WithSummary("Returns a Thing by ID from the DB")
-            .WithOpenApi();
+            .WithSummary("Returns a Thing by ID from the DB");
 
         adminGroup.MapPost("/", CreateThing)
             .WithName(nameof(CreateThing))
-            .WithSummary("Creates a new Thing in the DB")
-            .WithOpenApi();
+            .WithSummary("Creates a new Thing in the DB");
 
         adminGroup.MapPut("/{id:long}", UpdateThing)
             .WithName(nameof(UpdateThing))
-            .WithSummary("Updates an existing Thing in the DB")
-            .WithOpenApi();
+            .WithSummary("Updates an existing Thing in the DB");
 
         adminGroup.MapDelete("/{id:long}", DeleteThing)
             .WithName(nameof(DeleteThing))
-            .WithSummary("Deletes a Thing by ID from the DB")
-            .WithOpenApi();
+            .WithSummary("Deletes a Thing by ID from the DB");
     }
 
-    private static async Task<Ok<List<ThingModel>>> GetThings(AppDbContext context)
+    private static async Task<Ok<List<ThingModel>>> GetThings(GetThingsQueryHandler handler)
     {
-        var things = await context.Things.AsNoTracking().Select(thing => thing.MapToModel()).ToListAsync();
+        var result = await handler.Handle(new GetThingsQuery());
 
-        return TypedResults.Ok(things);
+        return TypedResults.Ok(result.Value);
     }
 
-    private static async Task<Results<NotFound, Ok<ThingModel>>> GetThingById(long id, AppDbContext context)
+    private static async Task<Results<NotFound, Ok<ThingModel>>> GetThingById(
+        [Description("Primary Key of the Thing")]
+        long id, GetThingByIdQueryHandler handler)
     {
-        var thing = await context.Things.AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
-        if (thing == null)
-        {
+        var result = await handler.Handle(new GetThingByIdQuery { Id = id });
+
+        if (result.IsFailure)
             return TypedResults.NotFound();
-        }
 
-        return TypedResults.Ok(thing.MapToModel());
+        return TypedResults.Ok(result.Value);
     }
 
-    private static async Task<CreatedAtRoute<ThingModel>> CreateThing(ThingModel thing, AppDbContext context)
+    private static async Task<CreatedAtRoute<ThingModel>> CreateThing(CreateThingCommand command,
+        CreateThingCommandHandler handler)
     {
-        var newThing = new Thing
-        {
-            Name = thing.Name
-        };
+        var result = await handler.Handle(command);
 
-        context.Things.Add(newThing);
-        await context.SaveChangesAsync();
-
-        return TypedResults.CreatedAtRoute(newThing.MapToModel(), nameof(GetThingById), new { id = newThing.Id });
+        return TypedResults.CreatedAtRoute(result.Value, nameof(GetThingById), new { id = result.Value.Id });
     }
 
-    private static async Task<Results<BadRequest, NotFound, Ok<ThingModel>>> UpdateThing(long id,
-        ThingModel updatedThing, AppDbContext context)
+    private static async Task<Results<BadRequest, NotFound, Ok<ThingModel>>> UpdateThing(
+        [Description("Primary Key of the Thing")]
+        long id,
+        UpdateThingCommand command, UpdateThingCommandHandler handler)
     {
-        if (id != updatedThing.Id)
-        {
+        if (id != command.Id)
             return TypedResults.BadRequest();
-        }
 
-        var existingThing = await context.Things.FirstOrDefaultAsync(t => t.Id == id);
-        if (existingThing == null)
-        {
+        var result = await handler.Handle(command);
+
+        if (result.IsFailure)
             return TypedResults.NotFound();
-        }
 
-        existingThing.Name = updatedThing.Name;
-        await context.SaveChangesAsync();
-
-        return TypedResults.Ok(existingThing.MapToModel());
+        return TypedResults.Ok(result.Value);
     }
 
-    private static async Task<Results<NotFound, Ok>> DeleteThing(long id, AppDbContext context)
+    private static async Task<Results<NotFound, Ok>> DeleteThing([Description("Primary Key of the Thing")] long id,
+        DeleteThingCommandHandler handler)
     {
-        var thing = await context.Things.FirstOrDefaultAsync(t => t.Id == id);
-        if (thing == null)
-        {
-            return TypedResults.NotFound();
-        }
+        var result = await handler.Handle(new DeleteThingCommand { Id = id });
 
-        context.Things.Remove(thing);
-        await context.SaveChangesAsync();
+        if (result.IsFailure)
+            return TypedResults.NotFound();
 
         return TypedResults.Ok();
     }

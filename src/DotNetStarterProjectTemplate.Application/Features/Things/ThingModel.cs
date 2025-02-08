@@ -1,8 +1,8 @@
 ﻿using DotNetStarterProjectTemplate.Application.Domain.Things;
 
-namespace DotNetStarterProjectTemplate.Api.Things;
+namespace DotNetStarterProjectTemplate.Application.Features.Things;
 
-public sealed class ThingModel
+public sealed record ThingModel
 {
     public required long Id { get; init; }
     public required string Name { get; init; }
