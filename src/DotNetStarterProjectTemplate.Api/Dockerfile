@@ -18,6 +18,9 @@ COPY ["src/Directory.Packages.props", "src/"]
 COPY ["src/DotNetStarterProjectTemplate.Api/DotNetStarterProjectTemplate.Api.csproj", "src/DotNetStarterProjectTemplate.Api/"]
 COPY ["src/DotNetStarterProjectTemplate.Api/packages.lock.json", "src/DotNetStarterProjectTemplate.Api/"]
 
+COPY ["src/DotNetStarterProjectTemplate.Application/DotNetStarterProjectTemplate.Application.csproj", "src/DotNetStarterProjectTemplate.Application/"]
+COPY ["src/DotNetStarterProjectTemplate.Application/packages.lock.json", "src/DotNetStarterProjectTemplate.Application/"]
+
 COPY ["src/DotNetStarterProjectTemplate.ServiceDefaults/DotNetStarterProjectTemplate.ServiceDefaults.csproj", "src/DotNetStarterProjectTemplate.ServiceDefaults/"]
 COPY ["src/DotNetStarterProjectTemplate.ServiceDefaults/packages.lock.json", "src/DotNetStarterProjectTemplate.ServiceDefaults/"]
 
