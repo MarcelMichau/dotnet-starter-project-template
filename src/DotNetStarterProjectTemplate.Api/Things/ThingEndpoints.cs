@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using DotNetStarterProjectTemplate.Api.Filters;
 using DotNetStarterProjectTemplate.Application.Features.Things;
+using DotNetStarterProjectTemplate.Application.Shared.Utils;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace DotNetStarterProjectTemplate.Api.Things;
@@ -33,18 +34,19 @@ internal static class ThingEndpoints
             .WithSummary("Deletes a Thing by ID from the DB");
     }
 
-    private static async Task<Ok<List<ThingModel>>> GetThings(GetThingsQueryHandler handler)
+    private static async Task<Ok<List<ThingModel>>> GetThings(IQueryHandler<GetThingsQuery, List<ThingModel>> handler,
+        CancellationToken cancellationToken)
     {
-        var result = await handler.Handle(new GetThingsQuery());
+        var result = await handler.Handle(new GetThingsQuery(), cancellationToken);
 
         return TypedResults.Ok(result.Value);
     }
 
     private static async Task<Results<NotFound, Ok<ThingModel>>> GetThingById(
         [Description("Primary Key of the Thing")]
-        long id, GetThingByIdQueryHandler handler)
+        long id, IQueryHandler<GetThingByIdQuery, ThingModel> handler, CancellationToken cancellationToken)
     {
-        var result = await handler.Handle(new GetThingByIdQuery { Id = id });
+        var result = await handler.Handle(new GetThingByIdQuery { Id = id }, cancellationToken);
 
         if (result.IsFailure)
             return TypedResults.NotFound();
@@ -53,9 +55,9 @@ internal static class ThingEndpoints
     }
 
     private static async Task<CreatedAtRoute<ThingModel>> CreateThing(CreateThingCommand command,
-        CreateThingCommandHandler handler)
+        ICommandHandler<CreateThingCommand, ThingModel> handler, CancellationToken cancellationToken)
     {
-        var result = await handler.Handle(command);
+        var result = await handler.Handle(command, cancellationToken);
 
         return TypedResults.CreatedAtRoute(result.Value, nameof(GetThingById), new { id = result.Value.Id });
     }
@@ -63,12 +65,13 @@ internal static class ThingEndpoints
     private static async Task<Results<BadRequest, NotFound, Ok<ThingModel>>> UpdateThing(
         [Description("Primary Key of the Thing")]
         long id,
-        UpdateThingCommand command, UpdateThingCommandHandler handler)
+        UpdateThingCommand command, ICommandHandler<UpdateThingCommand, ThingModel> handler,
+        CancellationToken cancellationToken)
     {
         if (id != command.Id)
             return TypedResults.BadRequest();
 
-        var result = await handler.Handle(command);
+        var result = await handler.Handle(command, cancellationToken);
 
         if (result.IsFailure)
             return TypedResults.NotFound();
@@ -77,9 +80,9 @@ internal static class ThingEndpoints
     }
 
     private static async Task<Results<NotFound, Ok>> DeleteThing([Description("Primary Key of the Thing")] long id,
-        DeleteThingCommandHandler handler)
+        ICommandHandler<DeleteThingCommand> handler, CancellationToken cancellationToken)
     {
-        var result = await handler.Handle(new DeleteThingCommand { Id = id });
+        var result = await handler.Handle(new DeleteThingCommand { Id = id }, cancellationToken);
 
         if (result.IsFailure)
             return TypedResults.NotFound();

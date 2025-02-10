@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
+using DotNetStarterProjectTemplate.Application.Shared.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace DotNetStarterProjectTemplate.Application.Features.Things;
@@ -10,11 +11,11 @@ public sealed record UpdateThingCommand
     public required string Name { get; init; }
 }
 
-public sealed class UpdateThingCommandHandler(AppDbContext context)
+public sealed class UpdateThingCommandHandler(AppDbContext context) : ICommandHandler<UpdateThingCommand, ThingModel>
 {
-    public async Task<Result<ThingModel>> Handle(UpdateThingCommand command)
+    public async Task<Result<ThingModel>> Handle(UpdateThingCommand command, CancellationToken cancellationToken)
     {
-        var thing = await context.Things.FirstOrDefaultAsync(t => t.Id == command.Id);
+        var thing = await context.Things.FirstOrDefaultAsync(t => t.Id == command.Id, cancellationToken);
 
         if (thing == null)
         {
@@ -23,7 +24,7 @@ public sealed class UpdateThingCommandHandler(AppDbContext context)
 
         thing.Name = command.Name;
 
-        await context.SaveChangesAsync();
+        await context.SaveChangesAsync(cancellationToken);
 
         return thing.MapToModel();
     }
