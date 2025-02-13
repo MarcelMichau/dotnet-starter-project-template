@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<PackageType>Template</PackageType>
-		<PackageVersion>1.4.1</PackageVersion>
+		<PackageVersion>1.4.2</PackageVersion>
 		<PackageId>MarcelMichau.Templates.DotNetStarterProject</PackageId>
 		<Title>.NET Starter Project Template</Title>
 		<Authors>Marcel Michau</Authors>
