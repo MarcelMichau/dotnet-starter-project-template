@@ -8,6 +8,9 @@ builder.AddServiceDefaults()
 
 builder.AddOpenApiConfiguration();
 
+builder.Services.AddRequestTimeouts();
+builder.Services.AddOutputCache();
+
 var app = builder.Build();
 
 app.MapOpenApiConfiguration();
@@ -19,5 +22,8 @@ app.UseStaticFiles();
 
 app.MapDefaultEndpoints();
 app.MapThingEndpoints();
+
+app.UseRequestTimeouts();
+app.UseOutputCache();
 
 app.Run();

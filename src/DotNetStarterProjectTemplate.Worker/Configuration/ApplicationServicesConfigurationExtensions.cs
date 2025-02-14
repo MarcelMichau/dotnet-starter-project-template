@@ -13,6 +13,9 @@ internal static class ApplicationServicesConfigurationExtensions
         if (builder.Environment.IsDevelopment())
         {
             builder.Services.AddHostedService<DatabaseMigrationHostedService>();
+
+            builder.Services.AddOpenTelemetry()
+                .WithTracing(tracing => tracing.AddSource(DatabaseMigrationHostedService.ActivitySourceName));
         }
 
         builder.Services.AddHostedService<ThingCountTimerHostedService>();
