@@ -10,26 +10,26 @@ internal static class ThingEndpoints
 {
     internal static void MapThingEndpoints(this WebApplication app)
     {
-        var adminGroup = app.MapGroup("/api/things")
+        var thingGroup = app.MapGroup("/api/things")
             .AddEndpointFilter<RequestLoggingEndpointFilter>();
 
-        adminGroup.MapGet("/", GetThings)
+        thingGroup.MapGet("/", GetThings)
             .WithName(nameof(GetThings))
             .WithSummary("Returns Things from the DB");
 
-        adminGroup.MapGet("/{id:long}", GetThingById)
+        thingGroup.MapGet("/{id:long}", GetThingById)
             .WithName(nameof(GetThingById))
             .WithSummary("Returns a Thing by ID from the DB");
 
-        adminGroup.MapPost("/", CreateThing)
+        thingGroup.MapPost("/", CreateThing)
             .WithName(nameof(CreateThing))
             .WithSummary("Creates a new Thing in the DB");
 
-        adminGroup.MapPut("/{id:long}", UpdateThing)
+        thingGroup.MapPut("/{id:long}", UpdateThing)
             .WithName(nameof(UpdateThing))
             .WithSummary("Updates an existing Thing in the DB");
 
-        adminGroup.MapDelete("/{id:long}", DeleteThing)
+        thingGroup.MapDelete("/{id:long}", DeleteThing)
             .WithName(nameof(DeleteThing))
             .WithSummary("Deletes a Thing by ID from the DB");
     }
