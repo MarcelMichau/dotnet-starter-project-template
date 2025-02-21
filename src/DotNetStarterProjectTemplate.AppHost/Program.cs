@@ -6,8 +6,6 @@ IResourceBuilder<IResourceWithConnectionString> database;
 
 if (builder.ExecutionContext.IsRunMode)
 {
-    ParameterResourceBuilderExtensions.CreateDefaultPasswordParameter(builder, "sql-server-password");
-
     database = builder.AddSqlServer("sql-server")
         .WithDataVolume()
         .AddDatabase("database");
