@@ -30,12 +30,13 @@ It has the following features & pre-configured defaults:
 - Centralised project configuration using `Directory.Build.Props` - to consolidate duplicated project properties across projects
 - Basic `index.html` landing page for the API project - to avoid a 404 when navigating to the root URL
 - Default `global.json` file with roll-forward policy set to `latestFeature` to always use the latest installed feature band
+- New `.slnx` Solution file format
 
 ## Getting Started
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.4.7
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.5.0
 ```
 
 After installation, create a new project using the template:
