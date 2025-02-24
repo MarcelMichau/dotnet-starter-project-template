@@ -24,12 +24,12 @@ jobs:
         global-json-file: global.json
 
     - name: Restore dependencies
-      run: dotnet restore DotNetStarterProjectTemplate.sln
+      run: dotnet restore DotNetStarterProjectTemplate.slnx
 
     - name: Build
-      run: dotnet build DotNetStarterProjectTemplate.sln --no-restore
+      run: dotnet build DotNetStarterProjectTemplate.slnx --no-restore
 
     - name: Test
       run: |
         dotnet dev-certs https --trust
-        dotnet test DotNetStarterProjectTemplate.sln --no-build --verbosity normal
+        dotnet test DotNetStarterProjectTemplate.slnx --no-build --verbosity normal

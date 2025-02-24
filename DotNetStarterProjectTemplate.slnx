@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".config/dotnet-tools.json" />
+    <File Path=".dockerignore" />
+    <File Path=".github/dependabot.yml" />
+    <File Path=".gitignore" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+    <File Path="src/Directory.Build.props" />
+    <File Path="src/Directory.Packages.props" />
+  </Folder>
+  <Project Path="src/DotNetStarterProjectTemplate.Api/DotNetStarterProjectTemplate.Api.csproj" />
+  <Project Path="src/DotNetStarterProjectTemplate.AppHost.Tests/DotNetStarterProjectTemplate.AppHost.Tests.csproj" />
+  <Project Path="src/DotNetStarterProjectTemplate.AppHost/DotNetStarterProjectTemplate.AppHost.csproj" />
+  <Project Path="src/DotNetStarterProjectTemplate.Application/DotNetStarterProjectTemplate.Application.csproj" />
+  <Project Path="src/DotNetStarterProjectTemplate.ServiceDefaults/DotNetStarterProjectTemplate.ServiceDefaults.csproj" />
+  <Project Path="src/DotNetStarterProjectTemplate.Worker/DotNetStarterProjectTemplate.Worker.csproj" />
+</Solution>
