@@ -2,11 +2,11 @@
   "version": 2,
   "dependencies": {
     "net9.0": {
-      "Aspire.Dashboard.Sdk.win-x64": {
+      "Aspire.Dashboard.Sdk.linux-x64": {
         "type": "Direct",
         "requested": "[9.1.0, )",
         "resolved": "9.1.0",
-        "contentHash": "a8Cd38Td/QI2kyalDE2ZXEPM0ZWKnp6mQmWwrTm+hutWQhzfo2yXZYdnPEhgvEPRxCKboq+k8rZ/WN/t7mfS8Q=="
+        "contentHash": "qbBrQesAw/ltQu9gPET29g/vmF/v5q+WZqdt3od4n8eOUO8otgQGEES3AozxUVfekTAZSFK/3DDeMsUUuVyG6Q=="
       },
       "Aspire.Hosting.AppHost": {
         "type": "Direct",
@@ -79,11 +79,11 @@
           "System.Text.Json": "8.0.5"
         }
       },
-      "Aspire.Hosting.Orchestration.win-x64": {
+      "Aspire.Hosting.Orchestration.linux-x64": {
         "type": "Direct",
         "requested": "[9.1.0, )",
         "resolved": "9.1.0",
-        "contentHash": "j/a8EvYnsj94HNbE1WtfOZ969YUnjwP6eK8yJse4rA5yHT5wPF75NtFdOs02Fjgg8c98X6W3uidWIhblZJQEDg=="
+        "contentHash": "vkgUb8F+4ApqaQgjO6M7USsYvXE4fk7Wlw6OaTAnXdioNE7QYCbulTqNPopOQfcUB/0ZJBIaUSDzGNyI/VZ2/w=="
       },
       "Aspire.Hosting.SqlServer": {
         "type": "Direct",
@@ -1018,7 +1018,7 @@
         "type": "Project",
         "dependencies": {
           "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[9.1.0, )",
-          "CSharpFunctionalExtensions": "[3.5.1, )",
+          "CSharpFunctionalExtensions": "[3.6.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[9.0.3, )"
         }
       },
@@ -1048,9 +1048,9 @@
       },
       "CSharpFunctionalExtensions": {
         "type": "CentralTransitive",
-        "requested": "[3.5.1, )",
-        "resolved": "3.5.1",
-        "contentHash": "J9wNzOzRdc4pfO3WREYR19zjp585y7/y9TKQXKkbxxnXt7N6h2Q8AjP0+bayrgRVxpU9COaFMA8961xbptYsUg=="
+        "requested": "[3.6.0, )",
+        "resolved": "3.6.0",
+        "contentHash": "c+oWbfDKKjpOLPMxn/iPn1GL24YTJMtOiGfj0AsDKZ2v6/Mr6V7BfzfWLg6KqNRx3KRy3KcQE680SwvDTI/jcg=="
       },
       "Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "CentralTransitive",
