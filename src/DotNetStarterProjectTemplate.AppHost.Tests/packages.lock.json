@@ -4,13 +4,13 @@
     "net9.0": {
       "Aspire.Hosting.Testing": {
         "type": "Direct",
-        "requested": "[9.2.0, )",
-        "resolved": "9.2.0",
-        "contentHash": "38pL2VHh8tEj6QZCCpmLBJqfcVPvLVXxaapnW0sbJOJJw/yNChbqOq1HmJsfE1AuHc70qjyifPxGDJ9CBFQXOQ==",
+        "requested": "[9.2.1, )",
+        "resolved": "9.2.1",
+        "contentHash": "5+TAOVoWnPsHr5OHjUDgg7yrROsRz6qd0/YKCDXaAJe6pBqEbup8YVxjhWK60o5OOKgbL0MDqFxtiqrY0E2VhA==",
         "dependencies": {
           "AspNetCore.HealthChecks.Uris": "9.0.0",
-          "Aspire.Hosting": "9.2.0",
-          "Aspire.Hosting.AppHost": "9.2.0",
+          "Aspire.Hosting": "9.2.1",
+          "Aspire.Hosting.AppHost": "9.2.1",
           "Google.Protobuf": "3.30.1",
           "Grpc.AspNetCore": "2.70.0",
           "Grpc.Net.ClientFactory": "2.70.0",
@@ -60,12 +60,12 @@
       },
       "TUnit": {
         "type": "Direct",
-        "requested": "[0.19.64, )",
-        "resolved": "0.19.64",
-        "contentHash": "p4fIdCrIV+FZ9I21aDgZh/UaroA5awX0sWJ3EFZyHzFK9WDijSsUDUGY2z1PikyFHlRpHwDdcaLJUCsSxQFhPg==",
+        "requested": "[0.19.116, )",
+        "resolved": "0.19.116",
+        "contentHash": "Ry4d/zR1/HYE7OZYQICojcWrKBzj+vYMWKm7ZWx3fUpuzpVxAFa/iXdgaZkraAxCOZYulhV27RoRYs6jRX7Erw==",
         "dependencies": {
-          "TUnit.Assertions": "0.19.64",
-          "TUnit.Engine": "0.19.64"
+          "TUnit.Assertions": "0.19.116",
+          "TUnit.Engine": "0.19.116"
         }
       },
       "Aspire.Dashboard.Sdk.win-x64": {
@@ -1212,24 +1212,24 @@
       },
       "TUnit.Assertions": {
         "type": "Transitive",
-        "resolved": "0.19.64",
-        "contentHash": "11dU6aVL82xhzEofWvECImzn1oSmEAaBKnT4oGPl/NEgBQX/ywaOqj9YwXJGm25UOTip+DfIDuKk5bjY6QnAYQ=="
+        "resolved": "0.19.116",
+        "contentHash": "vz7q4KpwC3oNdGhJ3syBaf7Q1oxH50RoznpByX2og3JB0+oGEETaeDTd3vPrF8/MVIUUC+othCeuNcK0Bc2Ymw=="
       },
       "TUnit.Core": {
         "type": "Transitive",
-        "resolved": "0.19.64",
-        "contentHash": "+1yaaVfgrwWfOqOHF/KzS+Rj/5B+n8zbLIukyWnh+RlVstOxl4U/IwxjUKTZteeM/m9HhyakhEXC5obHm37FUg=="
+        "resolved": "0.19.116",
+        "contentHash": "wnlEASB7e6KG1/+K0tKNivjokLr09pp03ZgUd8aex379Gwns1B12ivU3ApDhC087MbmVTTu5KdDM1gF6+Sm6fw=="
       },
       "TUnit.Engine": {
         "type": "Transitive",
-        "resolved": "0.19.64",
-        "contentHash": "/xtEc2ZgMYABH1eLllTXpC2jg5iCwifOuaDoRS/M4TprY+zAPHe2ENaCrrKoBWAzEdldABK9vqEXB1jGiVuorg==",
+        "resolved": "0.19.116",
+        "contentHash": "lvMuOIkPjoj+mJ4XEoutp5etyEmmSD+NBpj4WkltZ0qx3ivsv3gX/yQnHSiMp0Uz+5Dvpvw4ygkqwtKj8l54bA==",
         "dependencies": {
           "EnumerableAsyncProcessor": "2.1.0",
           "Microsoft.Testing.Extensions.TrxReport.Abstractions": "1.6.3",
           "Microsoft.Testing.Platform": "1.6.3",
           "Microsoft.Testing.Platform.MSBuild": "1.4.3",
-          "TUnit.Core": "0.19.64"
+          "TUnit.Core": "0.19.116"
         }
       },
       "YamlDotNet": {
