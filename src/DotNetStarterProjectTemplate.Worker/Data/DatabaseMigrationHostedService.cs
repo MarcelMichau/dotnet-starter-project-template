@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DotNetStarterProjectTemplate.Worker.Data;
 
-internal sealed class DatabaseMigrationHostedService(IServiceProvider serviceProvider) : BackgroundService
+internal sealed class DatabaseMigrationHostedService(IServiceScopeFactory serviceScopeFactory) : BackgroundService
 {
     public const string ActivitySourceName = "Migrations";
     private static readonly ActivitySource ActivitySource = new(ActivitySourceName);
@@ -18,7 +18,7 @@ internal sealed class DatabaseMigrationHostedService(IServiceProvider servicePro
 
         try
         {
-            using var scope = serviceProvider.CreateScope();
+            using var scope = serviceScopeFactory.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
             await EnsureDatabaseAsync(dbContext, cancellationToken);
