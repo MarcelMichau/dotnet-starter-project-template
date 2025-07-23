@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<PackageType>Template</PackageType>
-		<PackageVersion>1.6.4</PackageVersion>
+		<PackageVersion>1.6.5</PackageVersion>
 		<PackageId>MarcelMichau.Templates.DotNetStarterProject</PackageId>
 		<Title>.NET Starter Project Template</Title>
 		<Authors>Marcel Michau</Authors>
@@ -13,7 +13,7 @@
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<ContentTargetFolders>content</ContentTargetFolders>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
-    <NoWarn>$(NoWarn);NU5128</NoWarn>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
 		<PackageProjectUrl>https://github.com/MarcelMichau/dotnet-starter-project-template</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/MarcelMichau/dotnet-starter-project-template</RepositoryUrl>
@@ -23,7 +23,7 @@
 
 	<ItemGroup>
 		<Content Include="**\*" Exclude="**\bin\**;**\obj\**;.vs\**;.vscode\**;**\*.user;.git\**;LICENSE;README.md;DotNetStarterProjectTemplate.Package.csproj" />
-    <Compile Remove="**\*" />
+		<Compile Remove="**\*" />
 		<None Include=".template.config\icon.png" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
