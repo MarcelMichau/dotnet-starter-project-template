@@ -23,6 +23,8 @@ var worker = builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>($"
 builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>($"{Constants.AppAbbreviation}-api")
     .WithReference(database)
     .WaitFor(worker)
+    .WithHttpHealthCheck("health")
+    .WithHttpHealthCheck("alive")
     .WithExternalHttpEndpoints();
 
 builder.Build().Run();
