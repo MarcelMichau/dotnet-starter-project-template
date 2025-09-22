@@ -30,6 +30,6 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
     <PackageVersion Include="Scalar.AspNetCore" Version="2.8.5" />
-    <PackageVersion Include="TUnit" Version="0.61.2" />
+    <PackageVersion Include="TUnit" Version="0.61.13" />
   </ItemGroup>
 </Project>
