@@ -20,6 +20,8 @@ defaults:
 jobs:
   create_nuget:
     name: Pack Template NuGet Package
+    permissions:
+      contents: read
 
     runs-on: ubuntu-latest
 
