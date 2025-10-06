@@ -6,8 +6,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="9.5.0" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="9.5.0" />
-    <PackageVersion Include="Aspire.Hosting.SqlServer" Version="9.5.0" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="9.5.1" />
+    <PackageVersion Include="Aspire.Hosting.SqlServer" Version="9.5.1" />
     <PackageVersion Include="Aspire.Hosting.Testing" Version="9.5.0" />
     <PackageVersion Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.5.0" />
     <PackageVersion Include="CSharpFunctionalExtensions" Version="3.6.0" />
