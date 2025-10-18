@@ -36,7 +36,7 @@ It has the following features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.6.12
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::1.6.13
 ```
 
 After installation, create a new project using the template:
