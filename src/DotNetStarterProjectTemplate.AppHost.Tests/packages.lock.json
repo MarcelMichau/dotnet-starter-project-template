@@ -4,13 +4,13 @@
     "net9.0": {
       "Aspire.Hosting.Testing": {
         "type": "Direct",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "J2CmQ1agnlwMSIWAP2xxtuHnUovdwF4IMQJdSNb6+VrbO3x0jHxABr6RjuIIh0cEq8nUQB8dYCWDzNTEzUu0mw==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "Ys4W6HUmqxZzc5uNqfIe4Qb92LN44RE037+K4Or3fbxMfPYhkcHL2xMo0TOq4T49ysvCapl7VzZityqCIYFDcg==",
         "dependencies": {
           "AspNetCore.HealthChecks.Uris": "9.0.0",
-          "Aspire.Hosting": "9.5.1",
-          "Aspire.Hosting.AppHost": "9.5.1",
+          "Aspire.Hosting": "9.5.2",
+          "Aspire.Hosting.AppHost": "9.5.2",
           "Google.Protobuf": "3.32.0",
           "Grpc.AspNetCore": "2.71.0",
           "Grpc.Net.ClientFactory": "2.71.0",
@@ -61,23 +61,25 @@
       },
       "TUnit": {
         "type": "Direct",
-        "requested": "[0.75.11, )",
-        "resolved": "0.75.11",
-        "contentHash": "EGetEdH3lheVTU13PhI63/thgkX+r8wl6dtpfSHpqXTcjYpJ8EOltMdYuu5kL+4n4uPXj31/lgybEvLggDnmzQ==",
+        "requested": "[0.86.10, )",
+        "resolved": "0.86.10",
+        "contentHash": "I5EtTiVEeCcKjA5ZElKlKJCHyEf7EvOGX6Tyg+95fxTfHQJ7W922/xjuYc3/LFZk+EFgv2nC4Jsorpzx1+DkPQ==",
         "dependencies": {
-          "TUnit.Assertions": "0.75.11",
-          "TUnit.Engine": "0.75.11"
+          "Microsoft.Testing.Extensions.CodeCoverage": "18.1.0",
+          "Microsoft.Testing.Extensions.TrxReport": "2.0.1",
+          "TUnit.Assertions": "0.86.10",
+          "TUnit.Engine": "0.86.10"
         }
       },
       "Aspire.Dashboard.Sdk.win-x64": {
         "type": "Transitive",
-        "resolved": "9.5.1",
-        "contentHash": "Zs68NyitFQBZ7QttAxvFS5nrCy/KL1uuCi4aBr96vGr3KhXMue05rU8wMIwhwPLj49nxSE8mk1yJ12KC/Vk8mw=="
+        "resolved": "9.5.2",
+        "contentHash": "59o0gxsY39F/SNslyuOXeh0bZMokh0inqHi848C7JGVJLNJ1P9p5M3vV+otWhnj9OJMDhvfAqUckslzTGLzXPA=="
       },
       "Aspire.Hosting": {
         "type": "Transitive",
-        "resolved": "9.5.1",
-        "contentHash": "il7frwManbUV/ZnQXkgcYxULO/Nct0C3bGHuNFDxBroWE5Q9FShqcARfmLDHJvKDsiN1+SLc67ySpKY+rQrpzg==",
+        "resolved": "9.5.2",
+        "contentHash": "CQLIzx6zkQCuok+CHjrj3sEVlP6/elJwnWdkJComkAkQvp82ASPwiUDPF84bt5rO9SBwRqeej7HpFMLoL55fhQ==",
         "dependencies": {
           "AspNetCore.HealthChecks.Uris": "9.0.0",
           "Google.Protobuf": "3.32.0",
@@ -106,11 +108,11 @@
       },
       "Aspire.Hosting.Azure": {
         "type": "Transitive",
-        "resolved": "9.5.1",
-        "contentHash": "Hl5b0c9fF/zhKRYNIfDSlbtjXQ4lkZkGtDcYB20XGCfsLR+2iZPW7FPMa3puykajJGzJZ15ypCGFqpRz0wBFdg==",
+        "resolved": "9.5.2",
+        "contentHash": "jvemj18sqOpXv4/bB35uQoy7S+GqY8j63L9q0peLd8xpAkRZs0nvONJZqHZEFMn4FBZIrM6mYQZUsVyfymzsqA==",
         "dependencies": {
           "AspNetCore.HealthChecks.Uris": "9.0.0",
-          "Aspire.Hosting": "9.5.1",
+          "Aspire.Hosting": "9.5.2",
           "Azure.Core": "1.47.3",
           "Azure.Identity": "1.15.0",
           "Azure.Provisioning": "1.3.0",
@@ -145,8 +147,8 @@
       },
       "Aspire.Hosting.Orchestration.win-x64": {
         "type": "Transitive",
-        "resolved": "9.5.1",
-        "contentHash": "PeA/eXDehbwoIGDG8cPXsje4pViGCO2ltHXCZqRaSmyF51pjUsHjs3fN0kFXF0sN10PznjaUyoiRFNtQX3/kLQ=="
+        "resolved": "9.5.2",
+        "contentHash": "GQGlyoAntX+ng+VUuXSEKhhK9SazgBe4kC5Mia7sNclmY4sVCSCeAWAXDHYhKF3ayVbG9m/wR+PIgBy66nL6kQ=="
       },
       "AspNetCore.HealthChecks.SqlServer": {
         "type": "Transitive",
@@ -1143,24 +1145,24 @@
       },
       "TUnit.Assertions": {
         "type": "Transitive",
-        "resolved": "0.75.11",
-        "contentHash": "lBez+W8IOqmuGkLjTCHPmC71U+gUFBv9P/EEYMdmPnzcsBl1iWVjh0J+NAIzReUgHgZDo+M0nzzurlHwNzZ/3Q=="
+        "resolved": "0.86.10",
+        "contentHash": "M0mH06SvEbEmIAHq+uEatDKrE7bp0XUu2h/M7h9zxRPfFAOJP30Etua1CcAt+lXwyEarZOrwv5CX1+8EPONXbA=="
       },
       "TUnit.Core": {
         "type": "Transitive",
-        "resolved": "0.75.11",
-        "contentHash": "5mGPy5JZ4RFty1Ea6GZhPVdHOkZ/t4a2IG5OCcyW54BNf5Q4m8eBWvjHV0JAvMcGFWMG32mia1b9TXnQMSd5kQ=="
+        "resolved": "0.86.10",
+        "contentHash": "QkuN2Z8H2sEdWryZ/smaCKFN6YcbX1ncKL7XCj88Es8S8CBlx0RBNIezIVfFIFWOpsLthbGiwwu7SXjKVrWRUw=="
       },
       "TUnit.Engine": {
         "type": "Transitive",
-        "resolved": "0.75.11",
-        "contentHash": "TF/iNkQIui0M5WA3V/jh2XsSqCnXLKDK1QWtYdXrJ9IUzSsh0Chy+p19YUkXfhqPYF/HL9y8O79U09cM1XMj9Q==",
+        "resolved": "0.86.10",
+        "contentHash": "rkrq7MqTCYb1uFspD7RBRvU8Qa0n85AfYBXSnA0o7I0AQ3T+W7w8jTrqsatIN+bUfHAABxdCkm77AhNiHDXRqQ==",
         "dependencies": {
           "EnumerableAsyncProcessor": "3.8.4",
           "Microsoft.Testing.Extensions.TrxReport.Abstractions": "2.0.1",
           "Microsoft.Testing.Platform": "2.0.1",
           "Microsoft.Testing.Platform.MSBuild": "2.0.1",
-          "TUnit.Core": "0.75.11"
+          "TUnit.Core": "0.86.10"
         }
       },
       "YamlDotNet": {
@@ -1171,30 +1173,30 @@
       "dotnetstarterprojecttemplate.apphost": {
         "type": "Project",
         "dependencies": {
-          "Aspire.Dashboard.Sdk.win-x64": "[9.5.1, )",
-          "Aspire.Hosting.AppHost": "[9.5.1, )",
-          "Aspire.Hosting.Azure.Sql": "[9.5.1, )",
-          "Aspire.Hosting.Orchestration.win-x64": "[9.5.1, )",
-          "Aspire.Hosting.SqlServer": "[9.5.1, )",
+          "Aspire.Dashboard.Sdk.win-x64": "[9.5.2, )",
+          "Aspire.Hosting.AppHost": "[9.5.2, )",
+          "Aspire.Hosting.Azure.Sql": "[9.5.2, )",
+          "Aspire.Hosting.Orchestration.win-x64": "[9.5.2, )",
+          "Aspire.Hosting.SqlServer": "[9.5.2, )",
           "DotNetStarterProjectTemplate.Application": "[1.0.0, )"
         }
       },
       "dotnetstarterprojecttemplate.application": {
         "type": "Project",
         "dependencies": {
-          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[9.5.1, )",
+          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[9.5.2, )",
           "CSharpFunctionalExtensions": "[3.6.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[9.0.10, )"
         }
       },
       "Aspire.Hosting.AppHost": {
         "type": "CentralTransitive",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "pgfoff0TJggue6XyGx01LOZtMp3GLhohRggMK8L3dBAeg4Jm1QIiQiLJC1GFOFXnQMBDHICf25aRbw4/hcSCPA==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "CYdaa2TkgkF6Vs8f+mkp/2XYqac1EbXkP/eXzF2hX8D4dOJKKNUtdEI7gjHW718ocaodcqs7k7qvjpkeT+6zSQ==",
         "dependencies": {
           "AspNetCore.HealthChecks.Uris": "9.0.0",
-          "Aspire.Hosting": "9.5.1",
+          "Aspire.Hosting": "9.5.2",
           "Google.Protobuf": "3.32.0",
           "Grpc.AspNetCore": "2.71.0",
           "Grpc.Net.ClientFactory": "2.71.0",
@@ -1221,14 +1223,14 @@
       },
       "Aspire.Hosting.Azure.Sql": {
         "type": "CentralTransitive",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "Viw5ujhG/oFVQrhJZRecg++Rf3UPLHML/3GQgvT7ncp6NMIWev+8REM3aGjwCdK19ylreGgJqfX9GV+Acv2nQA==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "5Qez55v7N0OEUk8X3YDKI26ncIKHybnZFMfBL1/yjVfntSNVIws68CFWFOVaSAtKvMukG85/6vLNQUEdhklf8g==",
         "dependencies": {
           "AspNetCore.HealthChecks.SqlServer": "9.0.0",
           "AspNetCore.HealthChecks.Uris": "9.0.0",
-          "Aspire.Hosting.Azure": "9.5.1",
-          "Aspire.Hosting.SqlServer": "9.5.1",
+          "Aspire.Hosting.Azure": "9.5.2",
+          "Aspire.Hosting.SqlServer": "9.5.2",
           "Azure.Core": "1.47.3",
           "Azure.Identity": "1.15.0",
           "Azure.Provisioning": "1.3.0",
@@ -1266,13 +1268,13 @@
       },
       "Aspire.Hosting.SqlServer": {
         "type": "CentralTransitive",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "gsPLCwdpFdYbi872s7BoW0+pDqphbTxYJKTpWYfebHnVM10aKyDwYeLb7tRuJLysUT1GOcOzLPm0pGouJeNG8w==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "IkMgpukdWNjWuoFxfbk/9+PZclBU0lqy3ri0l9b0kkXYkdQchUqMEkdTFugLW2ijVt5ZMLQ2iNbXgCj4wml+fg==",
         "dependencies": {
           "AspNetCore.HealthChecks.SqlServer": "9.0.0",
           "AspNetCore.HealthChecks.Uris": "9.0.0",
-          "Aspire.Hosting": "9.5.1",
+          "Aspire.Hosting": "9.5.2",
           "Azure.Core": "1.47.3",
           "Azure.Identity": "1.15.0",
           "Google.Protobuf": "3.32.0",
@@ -1303,9 +1305,9 @@
       },
       "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "CentralTransitive",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "ZKRWfoYkHbkWMt3pR577b+DYwWgt+VTRH+v5ux5Gm/evnSJ9MQQp19az+7SMH1hAvMm8XJaD5BIB2lFgayIN0A==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "KEnyslAbYKkTWjNYymMxvbfF9KZpAGRFcXOBOyo++Hibarwg1D7sXqTilTmzqk/ERVJ4uSrrFHWXoGG9ZQNDWg==",
         "dependencies": {
           "Azure.Core": "1.47.3",
           "Azure.Identity": "1.15.0",

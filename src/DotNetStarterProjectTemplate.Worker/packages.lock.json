@@ -500,8 +500,8 @@
       },
       "Microsoft.Extensions.ServiceDiscovery.Abstractions": {
         "type": "Transitive",
-        "resolved": "9.5.1",
-        "contentHash": "WX+iYR4xGXheNA0VErmNKsvscsqEdlo2fIcE+PjFznS83xn5wUm3311gy6+MWHmY1Eeo030SpVKUyPg040YffA==",
+        "resolved": "9.5.2",
+        "contentHash": "U27AscM1BabWWJpd3xkIBSCveqtdGezydjYKBw0MrxEIjbLQ1jrWsYc2aFquTscO2bEIAzUjpJhvJfP1w/kvnw==",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
           "Microsoft.Extensions.Configuration.Binder": "8.0.2",
@@ -725,7 +725,7 @@
       "dotnetstarterprojecttemplate.application": {
         "type": "Project",
         "dependencies": {
-          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[9.5.1, )",
+          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[9.5.2, )",
           "CSharpFunctionalExtensions": "[3.6.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[9.0.10, )"
         }
@@ -734,7 +734,7 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.Http.Resilience": "[9.10.0, )",
-          "Microsoft.Extensions.ServiceDiscovery": "[9.5.1, )",
+          "Microsoft.Extensions.ServiceDiscovery": "[9.5.2, )",
           "OpenTelemetry.Exporter.OpenTelemetryProtocol": "[1.13.1, )",
           "OpenTelemetry.Extensions.Hosting": "[1.13.1, )",
           "OpenTelemetry.Instrumentation.AspNetCore": "[1.13.0, )",
@@ -744,9 +744,9 @@
       },
       "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "CentralTransitive",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "ZKRWfoYkHbkWMt3pR577b+DYwWgt+VTRH+v5ux5Gm/evnSJ9MQQp19az+7SMH1hAvMm8XJaD5BIB2lFgayIN0A==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "KEnyslAbYKkTWjNYymMxvbfF9KZpAGRFcXOBOyo++Hibarwg1D7sXqTilTmzqk/ERVJ4uSrrFHWXoGG9ZQNDWg==",
         "dependencies": {
           "Azure.Core": "1.47.3",
           "Azure.Identity": "1.15.0",
@@ -799,9 +799,9 @@
       },
       "Microsoft.Extensions.ServiceDiscovery": {
         "type": "CentralTransitive",
-        "requested": "[9.5.1, )",
-        "resolved": "9.5.1",
-        "contentHash": "gyW95LjZDwgUKNDRMMTt6QY0hVoQ82RchQEVqS6eecoUT+K76ioL5FouEf10XdBLWqo9B8rxB96oKZ3DGhxbXg==",
+        "requested": "[9.5.2, )",
+        "resolved": "9.5.2",
+        "contentHash": "FLSKwOTNZPqnfAc/QYF+L6OjB32nSJlaqPJ7XT4VSyxbMq6lt8ABfPLm6Y9MfZDHOSEnWr0ydPEhPQf98y1PrQ==",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
           "Microsoft.Extensions.Configuration.Binder": "8.0.2",
@@ -811,7 +811,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
           "Microsoft.Extensions.Options": "8.0.2",
           "Microsoft.Extensions.Primitives": "8.0.0",
-          "Microsoft.Extensions.ServiceDiscovery.Abstractions": "9.5.1"
+          "Microsoft.Extensions.ServiceDiscovery.Abstractions": "9.5.2"
         }
       },
       "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
