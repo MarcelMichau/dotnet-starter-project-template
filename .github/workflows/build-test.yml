@@ -4,34 +4,33 @@ permissions:
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths-ignore:
       - .gitignore
       - LICENSE
       - README.md
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        global-json-file: global.json
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
 
-    - name: Restore dependencies
-      run: dotnet restore DotNetStarterProjectTemplate.slnx
+      - name: Restore dependencies
+        run: dotnet restore DotNetStarterProjectTemplate.slnx
 
-    - name: Build
-      run: dotnet build DotNetStarterProjectTemplate.slnx --no-restore
+      - name: Build
+        run: dotnet build DotNetStarterProjectTemplate.slnx --no-restore
 
-    - name: Test
-      run: |
-        dotnet dev-certs https --trust
-        dotnet test DotNetStarterProjectTemplate.slnx --no-build --verbosity normal
+      - name: Test
+        run: |
+          dotnet dev-certs https --trust
+          dotnet test --solution DotNetStarterProjectTemplate.slnx --no-build --verbosity normal
