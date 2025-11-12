@@ -7,7 +7,6 @@ IResourceBuilder<IResourceWithConnectionString> database;
 if (builder.ExecutionContext.IsRunMode)
 {
     database = builder.AddSqlServer("sql-server")
-        .WithDataVolume()
         .AddDatabase("database");
 }
 else

@@ -8,30 +8,33 @@ namespace DotNetStarterProjectTemplate.Api.Things;
 
 internal static class ThingEndpoints
 {
-    internal static void MapThingEndpoints(this WebApplication app)
+    extension(WebApplication app)
     {
-        var thingGroup = app.MapGroup("/api/things")
-            .AddEndpointFilter<RequestLoggingEndpointFilter>();
+        internal void MapThingEndpoints()
+        {
+            var thingGroup = app.MapGroup("/api/things")
+                .AddEndpointFilter<RequestLoggingEndpointFilter>();
 
-        thingGroup.MapGet("/", GetThings)
-            .WithName(nameof(GetThings))
-            .WithSummary("Returns Things from the DB");
+            thingGroup.MapGet("/", GetThings)
+                .WithName(nameof(GetThings))
+                .WithSummary("Returns Things from the DB");
 
-        thingGroup.MapGet("/{id:long}", GetThingById)
-            .WithName(nameof(GetThingById))
-            .WithSummary("Returns a Thing by ID from the DB");
+            thingGroup.MapGet("/{id:long}", GetThingById)
+                .WithName(nameof(GetThingById))
+                .WithSummary("Returns a Thing by ID from the DB");
 
-        thingGroup.MapPost("/", CreateThing)
-            .WithName(nameof(CreateThing))
-            .WithSummary("Creates a new Thing in the DB");
+            thingGroup.MapPost("/", CreateThing)
+                .WithName(nameof(CreateThing))
+                .WithSummary("Creates a new Thing in the DB");
 
-        thingGroup.MapPut("/{id:long}", UpdateThing)
-            .WithName(nameof(UpdateThing))
-            .WithSummary("Updates an existing Thing in the DB");
+            thingGroup.MapPut("/{id:long}", UpdateThing)
+                .WithName(nameof(UpdateThing))
+                .WithSummary("Updates an existing Thing in the DB");
 
-        thingGroup.MapDelete("/{id:long}", DeleteThing)
-            .WithName(nameof(DeleteThing))
-            .WithSummary("Deletes a Thing by ID from the DB");
+            thingGroup.MapDelete("/{id:long}", DeleteThing)
+                .WithName(nameof(DeleteThing))
+                .WithSummary("Deletes a Thing by ID from the DB");
+        }
     }
 
     private static async Task<Ok<List<ThingModel>>> GetThings(IQueryHandler<GetThingsQuery, List<ThingModel>> handler,
