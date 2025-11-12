@@ -5,30 +5,36 @@ namespace DotNetStarterProjectTemplate.Api.Configuration;
 
 internal static class OpenApiConfigurationExtensions
 {
-    public static IHostApplicationBuilder AddOpenApiConfiguration(this IHostApplicationBuilder builder)
+    extension(IHostApplicationBuilder builder)
     {
-        builder.Services.AddOpenApi();
+        public IHostApplicationBuilder AddOpenApiConfiguration()
+        {
+            builder.Services.AddOpenApi();
 
-        return builder;
+            return builder;
+        }
     }
 
-    public static WebApplication MapOpenApiConfiguration(this WebApplication app)
+    extension(WebApplication app)
     {
-        app.MapOpenApi();
-
-        app.MapScalarApiReference(options =>
+        public WebApplication MapOpenApiConfiguration()
         {
-            options.Title = $"{Constants.AppFriendlyName} - OpenAPI";
+            app.MapOpenApi();
 
-            // Because light attracts bugs :)
-            options.DarkMode = true;
-            options.HideDarkModeToggle = true;
+            app.MapScalarApiReference(options =>
+            {
+                options.Title = $"{Constants.AppFriendlyName} - OpenAPI";
 
-            // Use the Aspire external proxy address for the API instead of the internal API address for the URL used by Scalar
-            // https://github.com/scalar/scalar/discussions/4025
-            options.Servers = [];
-        });
+                // Because light attracts bugs :)
+                options.DarkMode = true;
+                options.HideDarkModeToggle = true;
 
-        return app;
+                // Use the Aspire external proxy address for the API instead of the internal API address for the URL used by Scalar
+                // https://github.com/scalar/scalar/discussions/4025
+                options.Servers = [];
+            });
+
+            return app;
+        }
     }
 }

@@ -4,11 +4,14 @@ namespace DotNetStarterProjectTemplate.Api.Configuration;
 
 internal static class ApplicationServicesConfigurationExtensions
 {
-    public static IHostApplicationBuilder AddApplicationServicesConfiguration(this IHostApplicationBuilder builder)
+    extension(IHostApplicationBuilder builder)
     {
-        builder.AddApplication();
-        builder.AddInfrastructure();
+        public IHostApplicationBuilder AddApplicationServicesConfiguration()
+        {
+            builder.AddApplication();
+            builder.AddInfrastructure();
 
-        return builder;
+            return builder;
+        }
     }
 }
