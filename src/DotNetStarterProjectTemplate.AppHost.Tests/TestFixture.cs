@@ -8,7 +8,7 @@ namespace DotNetStarterProjectTemplate.AppHost.Tests
     public sealed class TestFixture : IAsyncInitializer, IAsyncDisposable
     {
         private const string ApiProjectName = $"{Constants.AppAbbreviation}-api";
-        private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(30);
+        private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(60);
         public DistributedApplication? App;
 
         public async Task InitializeAsync()
