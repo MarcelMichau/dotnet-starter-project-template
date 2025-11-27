@@ -1,4 +1,4 @@
-﻿<Project Sdk="Aspire.AppHost.Sdk/13.0.0">
+<Project Sdk="Aspire.AppHost.Sdk/13.0.1">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <UserSecretsId>dotnet-starter-project-template-apphost</UserSecretsId>

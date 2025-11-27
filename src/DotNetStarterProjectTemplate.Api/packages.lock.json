@@ -38,9 +38,9 @@
       },
       "Scalar.AspNetCore": {
         "type": "Direct",
-        "requested": "[2.10.3, )",
-        "resolved": "2.10.3",
-        "contentHash": "uDJlK7ZcHJgAIbXKB3zf4D/70VVEdsYaN3qwoUSBP3OHrdlLR/cIIYp16OFfX9d4VP29b30Jf6KXF59PvFGG4w=="
+        "requested": "[2.11.0, )",
+        "resolved": "2.11.0",
+        "contentHash": "zOV12+2VE6Tsb3U3YRtJtVABmzbAEPEkiYLAckHBgUuj6suarSp3kA4HE3UU9kNQmJrU6xrD5GTOAtwVENMgJQ=="
       },
       "Azure.Core": {
         "type": "Transitive",
@@ -573,7 +573,7 @@
       "dotnetstarterprojecttemplate.application": {
         "type": "Project",
         "dependencies": {
-          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[13.0.0, )",
+          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[13.0.1, )",
           "CSharpFunctionalExtensions": "[3.6.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[10.0.0, )"
         }
@@ -592,9 +592,9 @@
       },
       "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "CentralTransitive",
-        "requested": "[13.0.0, )",
-        "resolved": "13.0.0",
-        "contentHash": "5BqgUkzY9gZPx4izY2iZrpa1wpF5FsKVgNyTSSBWgxoxXiC3Xj75IPKn+VfwtDJlAq/2VaCyTev1nmW6uG0fMQ==",
+        "requested": "[13.0.1, )",
+        "resolved": "13.0.1",
+        "contentHash": "wyGZC1OaHW/tkzVukPLfDSGRqJOJKfY/LyJ5DrcStx+SMxEZfxS8CLuRWNtVmZJr46VRWqdumBxHUzsrtxF25w==",
         "dependencies": {
           "Azure.Core": "1.49.0",
           "Azure.Identity": "1.17.0",
