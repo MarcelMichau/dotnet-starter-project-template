@@ -32,6 +32,10 @@ It has the following features & pre-configured defaults:
 - Default `global.json` file with roll-forward policy set to `latestFeature` to always use the latest installed feature band
 - New `.slnx` Solution file format
 
+## SQL provisioning request annotation
+
+When you run `aspire publish` inside the AppHost (see [Aspire pipelines](https://aspire.dev/get-started/pipelines/)), the SQL database resource now contributes a custom pipeline step that produces a text file under `aspire-output/publish-outbox/`. The file is pre-populated with a request email template that includes the generated SQL Server and Database names so engineers can forward the request to a DBA team. You can tweak the defaults (admin email, output folder, requesting engineer) by changing the `WithProvisioningRequestEmail` extension in `DotNetStarterProjectTemplate.AppHost`.
+
 ## Getting Started
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
