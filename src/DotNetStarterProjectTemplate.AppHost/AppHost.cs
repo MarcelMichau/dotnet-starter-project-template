@@ -1,24 +1,30 @@
+#pragma warning disable ASPIREPIPELINES001
+
 using DotNetStarterProjectTemplate.AppHost.Annotations;
 using DotNetStarterProjectTemplate.Application.Shared;
+using Microsoft.Extensions.Logging;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
 builder.AddAzureContainerAppEnvironment("env");
 
-IResourceBuilder<IResourceWithConnectionString> database;
+var database = builder.AddAzureSqlServer("sql-server")
+    .RunAsContainer()
+    .AddDatabase("database")
+    .WithProvisioningRequestEmail("sql-my-awesome-app-dev-001");
 
-if (builder.ExecutionContext.IsRunMode)
+builder.Pipeline.AddStep("test-step", async context =>
 {
-    database = builder.AddSqlServer("sql-server")
-        .AddDatabase("database")
-        .WithProvisioningRequestEmail("sql-server");
-}
-else
+    context.Logger.LogInformation("This is a test pipeline step.");
+});
+
+builder.Pipeline.AddStep("get-compute-resources", async context =>
 {
-    database = builder.AddAzureSqlServer("sql-server")
-        .AddDatabase("database")
-        .WithProvisioningRequestEmail("sql-server");
-}
+    foreach (var resource in context.Model.GetComputeResources())
+    {
+        context.Logger.LogInformation("Compute Resource: {resource}", resource.Name);
+    }
+});
 
 var worker = builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>($"{Constants.AppAbbreviation}-worker")
     .WithReference(database)
@@ -29,6 +35,8 @@ builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>($"{Constants.AppAb
     .WaitFor(worker)
     .WithHttpHealthCheck("health")
     .WithHttpHealthCheck("alive")
-    .WithExternalHttpEndpoints();
+    .WithExternalHttpEndpoints()
+    .WithAnnotation(new DisableForwardedHeadersAnnotation());
+
 
 builder.Build().Run();

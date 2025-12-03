@@ -1,5 +1,3 @@
-using Aspire.Hosting.ApplicationModel;
-
 namespace DotNetStarterProjectTemplate.AppHost.Annotations;
 
 internal sealed record SqlProvisioningRequestAnnotation(
