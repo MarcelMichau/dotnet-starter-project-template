@@ -2,10 +2,7 @@
 #pragma warning disable ASPIREPIPELINES004
 
 using System.Globalization;
-using System.IO;
 using System.Text;
-using Aspire.Hosting;
-using Aspire.Hosting.ApplicationModel;
 using Aspire.Hosting.Pipelines;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,7 +16,7 @@ internal static class SqlResourceBuilderExtensions
       this IResourceBuilder<T> builder,
       string sqlServerResourceName,
       string adminTeamEmail = "dba-team@example.com",
-      string relativeOutputPath = "publish-outbox",
+      string relativeOutputPath = "sql-provisioning-request-email-draft",
       string? requestingEngineerEmail = null)
       where T : class, IResourceWithConnectionString
   {

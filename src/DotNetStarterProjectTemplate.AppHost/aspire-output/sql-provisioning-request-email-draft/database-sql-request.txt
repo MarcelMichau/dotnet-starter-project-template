@@ -1,0 +1,15 @@
+To: dba-team@example.com
+Subject: SQL provisioning request - database
+
+Hello DBA team,
+
+Please provision the following SQL assets as part of the upcoming deployment:
+  - Azure SQL Server resource: sql-my-awesome-app-dev-001
+  - Azure SQL Database resource: database
+  - Target environment: Production
+  - Requested on (UTC): 2025-11-28T13:36:55.5190719Z
+
+Once provisioned, please confirm the connection details so we can update the corresponding Aspire secrets.
+
+Many thanks,
+Aspire automation
