@@ -10,11 +10,14 @@ using OpenTelemetry.Trace;
 
 namespace Microsoft.Extensions.Hosting;
 
-// Adds common .NET Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
+// Adds common Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
 // This project should be referenced by each service project in your solution.
 // To learn more about using this project, see https://aka.ms/dotnet/aspire/service-defaults
 public static class Extensions
 {
+    private const string HealthEndpointPath = "/health";
+    private const string AlivenessEndpointPath = "/alive";
+
     public static TBuilder AddServiceDefaults<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
     {
         builder.ConfigureOpenTelemetry();
@@ -59,7 +62,12 @@ public static class Extensions
             .WithTracing(tracing =>
             {
                 tracing.AddSource(builder.Environment.ApplicationName)
-                    .AddAspNetCoreInstrumentation()
+                    .AddAspNetCoreInstrumentation(tracing =>
+                        // Exclude health check requests from tracing
+                        tracing.Filter = context =>
+                            !context.Request.Path.StartsWithSegments(HealthEndpointPath)
+                            && !context.Request.Path.StartsWithSegments(AlivenessEndpointPath)
+                    )
                     // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                     //.AddGrpcClientInstrumentation()
                     .AddHttpClientInstrumentation();
@@ -117,13 +125,13 @@ public static class Extensions
 
         // All health checks must pass for app to be
         // considered ready to accept traffic after starting
-        healthChecks.MapHealthChecks("/health");
+        healthChecks.MapHealthChecks(HealthEndpointPath);
 
         // Only health checks tagged with the "live" tag
         // must pass for app to be considered alive
-        healthChecks.MapHealthChecks("/alive", new HealthCheckOptions
+        healthChecks.MapHealthChecks(AlivenessEndpointPath, new HealthCheckOptions
         {
-            Predicate = static r => r.Tags.Contains("live")
+            Predicate = r => r.Tags.Contains("live")
         });
 
         return app;

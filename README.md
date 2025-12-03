@@ -16,8 +16,8 @@ It has the following features & pre-configured defaults:
 - ASP.NET Core Worker project - for background/long-running tasks
 - Minimal CQRS implementation for handling commands & queries
 - Docker support using `Dockerfile`
-- [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) Support
-- .NET Aspire Test Project for E2E tests using [TUnit](https://github.com/thomhurst/TUnit)
+- [Aspire](https://aspire.dev/) Support
+- Aspire Test Project for E2E tests using [TUnit](https://github.com/thomhurst/TUnit)
 - [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) with SQL Server for persistence
 - Pretty OpenAPI docs using [Scalar](https://github.com/scalar/scalar)
 - GitHub Actions Workflow for building & testing solution
@@ -36,7 +36,7 @@ It has the following features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::2.0.2
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::2.0.3
 ```
 
 After installation, create a new project using the template:
