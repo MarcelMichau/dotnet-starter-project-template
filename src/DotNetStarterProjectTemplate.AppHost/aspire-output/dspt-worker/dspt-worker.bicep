@@ -11,6 +11,12 @@ param dspt_worker_identity_outputs_id string
 
 param sql_server_outputs_sqlserverfqdn string
 
+param audit_outputs_connectionstring string
+
+param content_outputs_connectionstring string
+
+param logs_outputs_connectionstring string
+
 param dspt_worker_identity_outputs_clientid string
 
 param env_outputs_azure_container_registry_endpoint string
@@ -57,6 +63,18 @@ resource dspt_worker 'Microsoft.App/containerApps@2025-02-02-preview' = {
             {
               name: 'ConnectionStrings__database'
               value: 'Server=tcp:${sql_server_outputs_sqlserverfqdn},1433;Encrypt=True;Authentication="Active Directory Default";Database=database'
+            }
+            {
+              name: 'ConnectionStrings:Storage:audit'
+              value: audit_outputs_connectionstring
+            }
+            {
+              name: 'ConnectionStrings:Storage:content'
+              value: content_outputs_connectionstring
+            }
+            {
+              name: 'ConnectionStrings:Storage:logs'
+              value: logs_outputs_connectionstring
             }
             {
               name: 'AZURE_CLIENT_ID'
