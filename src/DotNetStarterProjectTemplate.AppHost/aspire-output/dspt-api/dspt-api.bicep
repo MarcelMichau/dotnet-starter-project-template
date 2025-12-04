@@ -62,10 +62,6 @@ resource dspt_api 'Microsoft.App/containerApps@2025-02-02-preview' = {
               value: 'in_memory'
             }
             {
-              name: 'ASPNETCORE_FORWARDEDHEADERS_ENABLED'
-              value: 'true'
-            }
-            {
               name: 'HTTP_PORTS'
               value: dspt_api_containerport
             }

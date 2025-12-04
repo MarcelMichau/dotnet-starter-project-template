@@ -28,6 +28,33 @@ module sql_server 'sql-server/sql-server.bicep' = {
   }
 }
 
+module audit 'audit/audit.bicep' = {
+  name: 'audit'
+  scope: rg
+  params: {
+    location: location
+    storageAccountName: 'stauditdev001'
+  }
+}
+
+module content 'content/content.bicep' = {
+  name: 'content'
+  scope: rg
+  params: {
+    location: location
+    storageAccountName: 'stcontentdev001'
+  }
+}
+
+module logs 'logs/logs.bicep' = {
+  name: 'logs'
+  scope: rg
+  params: {
+    location: location
+    storageAccountName: 'stlogsdev001'
+  }
+}
+
 module dspt_worker_identity 'dspt-worker-identity/dspt-worker-identity.bicep' = {
   name: 'dspt-worker-identity'
   scope: rg
@@ -81,6 +108,12 @@ output env_AZURE_CONTAINER_APPS_ENVIRONMENT_ID string = env.outputs.AZURE_CONTAI
 output dspt_worker_identity_id string = dspt_worker_identity.outputs.id
 
 output sql_server_sqlServerFqdn string = sql_server.outputs.sqlServerFqdn
+
+output audit_connectionString string = audit.outputs.connectionString
+
+output content_connectionString string = content.outputs.connectionString
+
+output logs_connectionString string = logs.outputs.connectionString
 
 output dspt_worker_identity_clientId string = dspt_worker_identity.outputs.clientId
 
