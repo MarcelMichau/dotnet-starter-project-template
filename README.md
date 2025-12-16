@@ -2,8 +2,8 @@
 
 Batteries-included .NET project template which serves as a good starting point to scale to more complex projects.
 
-[![Build + Test](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/build-test.yml/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/build-test.yml)
-[![CodeQL](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql)
+[![Build + Test](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/build-test.yml/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/actions[...]
+[![CodeQL](https://github.com/MarcelMichau/dotnet-starter-project-template/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/MarcelMichau/dotnet-starter-project-template/[...]
 [![Nuget](https://img.shields.io/nuget/v/MarcelMichau.Templates.DotNetStarterProject?label=NuGet)](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject)
 
 [Open in github.dev](https://github.dev/MarcelMichau/dotnet-starter-project-template)
@@ -36,7 +36,7 @@ It has the following features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject::2.0.5
+dotnet new install MarcelMichau.Templates.DotNetStarterProject::2.0.6
 ```
 
 After installation, create a new project using the template:
