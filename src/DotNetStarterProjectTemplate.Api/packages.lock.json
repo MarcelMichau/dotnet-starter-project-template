@@ -38,17 +38,17 @@
       },
       "Scalar.AspNetCore": {
         "type": "Direct",
-        "requested": "[2.11.3, )",
-        "resolved": "2.11.3",
-        "contentHash": "snUKmXkzqL/tq7VICO5Iy+/lD7+ngy322oTrBMJL9YL5TjrhRRIByGvXYaURWA0N9IfGSxmq2y02AMwlUCbopw=="
+        "requested": "[2.11.7, )",
+        "resolved": "2.11.7",
+        "contentHash": "tNSObm2t7NMMm2ItA9ws10CClsDm4C8zseS6MyPQtWC3t9wg9iGggZfyRCFqt1kZJqWVwbbYDkxKOZ4+Suce6g=="
       },
       "Azure.Core": {
         "type": "Transitive",
-        "resolved": "1.49.0",
-        "contentHash": "wmY5VEEVTBJN+8KVB6qSVZYDCMpHs1UXooOijx/NH7OsMtK92NlxhPBpPyh4cR+07R/zyDGvA5+Fss4TpwlO+g==",
+        "resolved": "1.50.0",
+        "contentHash": "GBNKZEhdIbTXxedvD3R7I/yDVFX9jJJEz02kCziFSJxspSQ5RMHc3GktulJ1s7+ffXaXD7kMgrtdQTaggyInLw==",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "8.0.0",
-          "System.ClientModel": "1.7.0",
+          "System.ClientModel": "1.8.0",
           "System.Memory.Data": "8.0.1"
         }
       },
@@ -265,10 +265,10 @@
       },
       "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
         "type": "Transitive",
-        "resolved": "10.0.0",
-        "contentHash": "ND74bTLuvcrhpEPQU8QZwOrq08zPPj76Ev/60SX1juVKLSSnbknXNoOzNYMPJn3xvhyDHmqU3Hvb/aYV3uvvhQ==",
+        "resolved": "10.0.1",
+        "contentHash": "6GhBHo94O6RePBlIjiqLFBVJfUQZhZwoug0KOJajjwlpjjMENjhpqrPsSllXOqrtfFvCDYUO/eoCKRtcD5qfGA==",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "10.0.0"
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.1"
         }
       },
       "Microsoft.Extensions.Http.Diagnostics": {
@@ -448,8 +448,8 @@
       },
       "System.ClientModel": {
         "type": "Transitive",
-        "resolved": "1.7.0",
-        "contentHash": "NKKA3/O6B7PxmtIzOifExHdfoWthy3AD4EZ1JfzcZU8yGZTbYrK1qvXsHUL/1yQKKqWSKgIR1Ih/yf2gOaHc4w==",
+        "resolved": "1.8.0",
+        "contentHash": "AqRzhn0v29GGGLj/Z6gKq4lGNtvPHT4nHdG5PDJh9IfVjv/nYUVmX11hwwws1vDFeIAzrvmn0dPu8IjLtu6fAw==",
         "dependencies": {
           "System.Memory.Data": "8.0.1"
         }
@@ -573,7 +573,7 @@
       "dotnetstarterprojecttemplate.application": {
         "type": "Project",
         "dependencies": {
-          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[13.0.2, )",
+          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[13.1.0, )",
           "CSharpFunctionalExtensions": "[3.6.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[10.0.1, )"
         }
@@ -592,16 +592,16 @@
       },
       "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "CentralTransitive",
-        "requested": "[13.0.2, )",
-        "resolved": "13.0.2",
-        "contentHash": "F9iLMdzX0vatA6zEr0+BYD+IbcfJ6RWQ6jwbZzsPF4bYpT7+m3gKADqyfVd0p2ta/Jt+LHUrcIx7jlo45ICgRA==",
+        "requested": "[13.1.0, )",
+        "resolved": "13.1.0",
+        "contentHash": "Qn5Hnc9usATKMoxdstTR7I86beEFXHIlTtzipTRf0jTDQsF0+X+acT5bkFuaiHmUfdwYrRNVKJfjXw9k+cmnSQ==",
         "dependencies": {
-          "Azure.Core": "1.49.0",
+          "Azure.Core": "1.50.0",
           "Azure.Identity": "1.17.0",
           "Microsoft.Data.SqlClient": "6.1.2",
-          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": "10.0.0",
-          "OpenTelemetry.Extensions.Hosting": "1.9.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.1",
+          "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": "10.0.1",
+          "OpenTelemetry.Extensions.Hosting": "1.14.0"
         }
       },
       "CSharpFunctionalExtensions": {
