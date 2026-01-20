@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<PackageType>Template</PackageType>
-		<PackageVersion>2.0.12</PackageVersion>
+		<PackageVersion>2.0.13</PackageVersion>
 		<PackageId>MarcelMichau.Templates.DotNetStarterProject</PackageId>
 		<Title>.NET Starter Project Template</Title>
 		<Authors>Marcel Michau</Authors>
