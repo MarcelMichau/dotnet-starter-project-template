@@ -4,9 +4,9 @@
     "net10.0": {
       "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "Direct",
-        "requested": "[13.1.1, )",
-        "resolved": "13.1.1",
-        "contentHash": "az4ujeravYQyzSCSyx3Sc0dcNUrkYyfzqwJ1mgAS9TvSjwLmpopEMV2q848+225MzmnTMFfrrKemelXq5Qxs0A==",
+        "requested": "[13.1.2, )",
+        "resolved": "13.1.2",
+        "contentHash": "RrnfTDyPsXnWTb/uGIfrq1lyycjdEsDVKHqdERq7jhJeIMotB3u6X3DSLQ9CzepToR4SuipK0QH6UlHt4pswdw==",
         "dependencies": {
           "Azure.Core": "1.50.0",
           "Azure.Identity": "1.17.1",
