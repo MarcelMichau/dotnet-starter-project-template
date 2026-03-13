@@ -32,7 +32,5 @@ jobs:
 
       - name: Test
         run: |
-          dotnet dev-certs https --trust
+          SSL_CERT_DIR=$HOME/.aspnet/dev-certs/trust dotnet dev-certs https --trust
           dotnet test --solution DotNetStarterProjectTemplate.slnx --no-build --verbosity normal
-        env:
-          SSL_CERT_DIR: "${{ env.HOME }}/.aspnet/dev-certs/trust"
