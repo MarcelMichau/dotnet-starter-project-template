@@ -1,0 +1,5 @@
+{
+  "appHost": {
+    "path": "src/DotNetStarterProjectTemplate.AppHost/DotNetStarterProjectTemplate.AppHost.csproj"
+  }
+}
