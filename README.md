@@ -23,6 +23,7 @@ It has the following features & pre-configured defaults:
 - GitHub Actions Workflow for building & testing solution
 - Dependabot configuration for automatic dependency updates
 - [NuGet Package Auditing](https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages)
+- [NuGet Package Source Mapping](https://learn.microsoft.com/en-us/nuget/consume-packages/package-source-mapping)
 - [NuGet Central Package Management](https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management)
 - [NuGet Lock Files Enabled](https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#enabling-the-lock-file)
 - [.NET Chiseled Containers](https://devblogs.microsoft.com/dotnet/announcing-dotnet-chiseled-containers/)
@@ -36,7 +37,7 @@ It has the following features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject@2.3.1
+dotnet new install MarcelMichau.Templates.DotNetStarterProject@2.4.0
 ```
 
 After installation, create a new project using the template:
