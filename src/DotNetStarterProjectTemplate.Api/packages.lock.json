@@ -458,7 +458,7 @@
       "dotnetstarterprojecttemplate.application": {
         "type": "Project",
         "dependencies": {
-          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[13.4.0, )",
+          "Aspire.Microsoft.EntityFrameworkCore.SqlServer": "[13.4.3, )",
           "CSharpFunctionalExtensions": "[3.7.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[10.0.8, )"
         }
@@ -477,9 +477,9 @@
       },
       "Aspire.Microsoft.EntityFrameworkCore.SqlServer": {
         "type": "CentralTransitive",
-        "requested": "[13.4.0, )",
-        "resolved": "13.4.0",
-        "contentHash": "Q5fbgpUCDHXgvzwCw6LkeBJ8uZuq7Mpr5b7JEe3YWnWt7FnDXnHeYQJbVY3OMin/oqjhWYOIfI1A42ukq6CKQw==",
+        "requested": "[13.4.3, )",
+        "resolved": "13.4.3",
+        "contentHash": "ScowEHKvHondhSOuYKqAFXKDW3BxUwsdsYHxdkbpcbLkZV6FKcB6SGvAThbIoTfoWw+PztKusQYxswKeuPnSwg==",
         "dependencies": {
           "Microsoft.Data.SqlClient": "7.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
