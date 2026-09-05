@@ -33,4 +33,14 @@ jobs:
       - name: Test
         run: |
           SSL_CERT_DIR=$HOME/.aspnet/dev-certs/trust dotnet dev-certs https --trust
-          dotnet test --solution DotNetStarterProjectTemplate.slnx --no-build --verbosity normal
+          dotnet test --solution DotNetStarterProjectTemplate.slnx --no-build --verbosity normal --coverage --report-trx
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: test-results
+          path: |
+            **/*.trx
+            **/*.coverage
+          retention-days: 7

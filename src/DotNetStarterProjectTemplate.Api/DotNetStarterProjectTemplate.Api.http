@@ -5,7 +5,7 @@ Accept: application/json
 
 ###
 
-GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/api/things
+GET {{DotNetStarterProjectTemplate.Api_HostAddress}}/api/v1/things
 Accept: application/json
 
 ###

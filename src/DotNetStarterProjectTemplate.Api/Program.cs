@@ -6,14 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults()
     .AddApplicationServicesConfiguration();
 
-builder.AddOpenApiConfiguration();
+builder.AddApiVersioningConfiguration();
 
+builder.Services.AddProblemDetails();
 builder.Services.AddRequestTimeouts();
 builder.Services.AddOutputCache();
 
 var app = builder.Build();
 
-app.MapOpenApiConfiguration();
+app.UseExceptionHandler();
+app.UseStatusCodePages();
 
 app.UseHttpsRedirection();
 
@@ -22,6 +24,7 @@ app.UseStaticFiles();
 
 app.MapDefaultEndpoints();
 app.MapThingEndpoints();
+app.MapOpenApiConfiguration();
 
 app.UseRequestTimeouts();
 app.UseOutputCache();

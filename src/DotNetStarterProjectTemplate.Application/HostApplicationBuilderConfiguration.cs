@@ -1,8 +1,8 @@
-﻿using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
+﻿using System.Reflection;
+using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
+using DotNetStarterProjectTemplate.Application.Shared.Utils;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using DotNetStarterProjectTemplate.Application.Features.Things;
-using DotNetStarterProjectTemplate.Application.Shared.Utils;
 
 namespace DotNetStarterProjectTemplate.Application;
 
@@ -10,11 +10,25 @@ public static class HostApplicationBuilderConfiguration
 {
     public static IHostApplicationBuilder AddApplication(this IHostApplicationBuilder builder)
     {
-        builder.Services.AddScoped<IQueryHandler<GetThingsQuery, List<ThingModel>>, GetThingsQueryHandler>();
-        builder.Services.AddScoped<IQueryHandler<GetThingByIdQuery, ThingModel>, GetThingByIdQueryHandler>();
-        builder.Services.AddScoped<ICommandHandler<DeleteThingCommand>, DeleteThingCommandHandler>();
-        builder.Services.AddScoped<ICommandHandler<CreateThingCommand, ThingModel>, CreateThingCommandHandler>();
-        builder.Services.AddScoped<ICommandHandler<UpdateThingCommand, ThingModel>, UpdateThingCommandHandler>();
+        var assembly = Assembly.GetExecutingAssembly();
+
+        // Auto-register all ICommandHandler<TRequest>, ICommandHandler<TRequest, TResponse>
+        // and IQueryHandler<TRequest, TResponse> implementations found in this assembly.
+        foreach (var type in assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract))
+        {
+            foreach (var iface in type.GetInterfaces())
+            {
+                if (!iface.IsGenericType) continue;
+
+                var genericDef = iface.GetGenericTypeDefinition();
+                if (genericDef == typeof(ICommandHandler<>) ||
+                    genericDef == typeof(ICommandHandler<,>) ||
+                    genericDef == typeof(IQueryHandler<,>))
+                {
+                    builder.Services.AddScoped(iface, type);
+                }
+            }
+        }
 
         return builder;
     }
@@ -23,7 +37,7 @@ public static class HostApplicationBuilderConfiguration
     {
         builder.Services.AddSingleton(TimeProvider.System);
 
-        builder.AddDatabaseConfiguration(builder.Configuration);
+        builder.AddDatabaseConfiguration();
 
         return builder;
     }

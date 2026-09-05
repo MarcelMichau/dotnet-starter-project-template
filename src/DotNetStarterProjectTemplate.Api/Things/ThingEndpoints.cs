@@ -12,8 +12,11 @@ internal static class ThingEndpoints
     {
         internal void MapThingEndpoints()
         {
-            var thingGroup = app.MapGroup("/api/things")
-                .AddEndpointFilter<RequestLoggingEndpointFilter>();
+            var thingGroup = app.NewVersionedApi()
+                .MapGroup("/api/v{version:apiVersion}/things")
+                .AddEndpointFilter<RequestLoggingEndpointFilter>()
+                .AddEndpointFilter<ValidationEndpointFilter>()
+                .HasApiVersion(1.0);
 
             thingGroup.MapGet("/", GetThings)
                 .WithName(nameof(GetThings))
@@ -82,7 +85,9 @@ internal static class ThingEndpoints
         return TypedResults.Ok(result.Value);
     }
 
-    private static async Task<Results<NotFound, Ok>> DeleteThing([Description("Primary Key of the Thing")] long id,
+    private static async Task<Results<NotFound, NoContent>> DeleteThing(
+        [Description("Primary Key of the Thing")]
+        long id,
         ICommandHandler<DeleteThingCommand> handler, CancellationToken cancellationToken)
     {
         var result = await handler.Handle(new DeleteThingCommand { Id = id }, cancellationToken);
@@ -90,6 +95,6 @@ internal static class ThingEndpoints
         if (result.IsFailure)
             return TypedResults.NotFound();
 
-        return TypedResults.Ok();
+        return TypedResults.NoContent();
     }
 }

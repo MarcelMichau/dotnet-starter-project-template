@@ -17,7 +17,7 @@ public sealed class ApiTests
     public async Task GetThingsReturnsOkStatusCode()
     {
         // Act
-        var response = await Client.GetAsync("/api/things");
+        var response = await Client.GetAsync("/api/v1/things");
 
         // Assert
         await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.OK);
@@ -30,7 +30,7 @@ public sealed class ApiTests
         var createdThingId = await CreateNewThing();
 
         // Act
-        var response = await Client.GetAsync($"/api/things/{createdThingId}");
+        var response = await Client.GetAsync($"/api/v1/things/{createdThingId}");
 
         // Assert
         await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.OK);
@@ -40,7 +40,7 @@ public sealed class ApiTests
     public async Task GetNonExistentThingByIdReturnsNotFoundStatusCode()
     {
         // Act
-        var response = await Client.GetAsync("/api/things/-1");
+        var response = await Client.GetAsync("/api/v1/things/-1");
 
         // Assert
         await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.NotFound);
@@ -50,7 +50,7 @@ public sealed class ApiTests
     public async Task CreateThingReturnsCreatedStatusCode()
     {
         // Act
-        var response = await Client.PostAsJsonAsync("/api/things", new { Name = "New Thing" });
+        var response = await Client.PostAsJsonAsync("/api/v1/things", new { Name = "New Thing" });
 
         // Assert
         await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.Created);
@@ -63,7 +63,7 @@ public sealed class ApiTests
         var createdThingId = await CreateNewThing();
 
         // Act
-        var response = await Client.PutAsJsonAsync($"/api/things/{createdThingId}",
+        var response = await Client.PutAsJsonAsync($"/api/v1/things/{createdThingId}",
             new { Id = createdThingId, Name = "Updated Thing" });
 
         // Assert
@@ -74,7 +74,7 @@ public sealed class ApiTests
     public async Task UpdateNonExistentThingReturnsNotFoundStatusCode()
     {
         // Act
-        var response = await Client.PutAsJsonAsync("/api/things/-1",
+        var response = await Client.PutAsJsonAsync("/api/v1/things/-1",
             new { Id = -1, Name = "Updated Thing" });
 
         // Assert
@@ -85,7 +85,7 @@ public sealed class ApiTests
     public async Task UpdateThingWithMismatchedIdReturnsBadRequestStatusCode()
     {
         // Act
-        var response = await Client.PutAsJsonAsync("/api/things/1",
+        var response = await Client.PutAsJsonAsync("/api/v1/things/1",
             new { Id = 2, Name = "Updated Thing" });
 
         // Assert
@@ -93,22 +93,22 @@ public sealed class ApiTests
     }
 
     [Test]
-    public async Task DeleteThingReturnsOkStatusCode()
+    public async Task DeleteThingReturnsNoContentStatusCode()
     {
         // Arrange
         var createdThingId = await CreateNewThing();
 
         // Act
-        var response = await Client.DeleteAsync($"/api/things/{createdThingId}");
+        var response = await Client.DeleteAsync($"/api/v1/things/{createdThingId}");
 
         // Assert
-        await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.OK);
+        await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.NoContent);
     }
 
     [Test]
     public async Task DeleteNonExistentThingReturnsNotFoundStatusCode()
     {
-        var response = await Client.DeleteAsync("/api/things/-1");
+        var response = await Client.DeleteAsync("/api/v1/things/-1");
 
         // Assert
         await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.NotFound);
@@ -117,7 +117,7 @@ public sealed class ApiTests
     private async Task<int> CreateNewThing()
     {
         var createResponse = await Client
-            .PostAsJsonAsync("/api/things", new { Name = "New Thing" });
+            .PostAsJsonAsync("/api/v1/things", new { Name = "New Thing" });
         createResponse.EnsureSuccessStatusCode();
         var createdThing = await createResponse.Content.ReadFromJsonAsync<ThingModel>();
         var createdThingId = (int)createdThing!.Id;

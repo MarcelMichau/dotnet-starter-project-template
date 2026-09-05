@@ -14,14 +14,17 @@ It has the following features & pre-configured defaults:
 
 - ASP.NET Core Minimal API project
 - ASP.NET Core Worker project - for background/long-running tasks
-- Minimal CQRS implementation for handling commands & queries
+- Minimal CQRS implementation for handling commands & queries (zero-dependency, auto-registered via reflection)
 - Docker support using `Dockerfile`
 - [Aspire](https://aspire.dev/) Support
 - Aspire Test Project for E2E tests using [TUnit](https://github.com/thomhurst/TUnit)
+- Unit / integration test project using [TUnit](https://github.com/thomhurst/TUnit) with in-memory EF Core
 - [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) with SQL Server for persistence
+- Consistent RFC 7807 Problem Details error responses
+- Input validation using Data Annotations via a reusable endpoint filter
 - Pretty OpenAPI docs using [Scalar](https://github.com/scalar/scalar)
-- GitHub Actions Workflow for building & testing solution
-- Dependabot configuration for automatic dependency updates
+- GitHub Actions Workflow for building & testing solution with code coverage and TRX report upload
+- Dependabot configuration for automatic dependency updates (NuGet, Docker, dotnet-sdk, GitHub Actions)
 - [NuGet Package Auditing](https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages)
 - [NuGet Package Source Mapping](https://learn.microsoft.com/en-us/nuget/consume-packages/package-source-mapping)
 - [NuGet Central Package Management](https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management)
@@ -37,7 +40,7 @@ It has the following features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject@2.4.4
+dotnet new install MarcelMichau.Templates.DotNetStarterProject@2.5.0
 ```
 
 After installation, create a new project using the template:
@@ -61,3 +64,20 @@ From the project root, run the following:
 ```bash
 dotnet ef migrations add <migration-name> -p .\src\MyAwesomeApp.Application\ -s .\src\MyAwesomeApp.Api\ -o Infrastructure\Persistence\Migrations
 ```
+
+## Running Tests
+
+### Unit / Integration Tests
+
+```bash
+dotnet test src\MyAwesomeApp.Tests
+```
+
+### End-to-End Tests (Aspire)
+
+```bash
+dotnet test src\MyAwesomeApp.AppHost.Tests
+```
+
+> **Note:** E2E tests start the full Aspire application stack (including Docker containers).
+> Ensure Docker is running before executing them.

@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using System.ComponentModel.DataAnnotations;
+using CSharpFunctionalExtensions;
 using DotNetStarterProjectTemplate.Application.Infrastructure.Persistence;
 using DotNetStarterProjectTemplate.Application.Shared.Utils;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,10 @@ namespace DotNetStarterProjectTemplate.Application.Features.Things;
 public sealed record UpdateThingCommand
 {
     public required long Id { get; init; }
+
+    [Required]
+    [MinLength(1)]
+    [MaxLength(200)]
     public required string Name { get; init; }
 }
 

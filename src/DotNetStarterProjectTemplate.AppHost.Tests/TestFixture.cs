@@ -36,8 +36,6 @@ namespace DotNetStarterProjectTemplate.AppHost.Tests
             await resourceNotificationService
                 .WaitForResourceAsync(ApiProjectName, KnownResourceStates.Running)
                 .WaitAsync(DefaultTimeout);
-
-            await App.StartAsync();
         }
 
         public async ValueTask DisposeAsync()
