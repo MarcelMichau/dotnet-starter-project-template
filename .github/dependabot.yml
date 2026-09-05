@@ -9,23 +9,43 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
 
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
       interval: "weekly"
-      
+    groups:
+      nuget:
+        patterns:
+          - "*"
+
   - package-ecosystem: "dotnet-sdk"
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      dotnet-sdk:
+        patterns:
+          - "*"
 
   - package-ecosystem: "docker"
     directory: "/src/DotNetStarterProjectTemplate.Api"
     schedule:
       interval: "weekly"
-      
+    groups:
+      docker-api:
+        patterns:
+          - "*"
+
   - package-ecosystem: "docker"
     directory: "/src/DotNetStarterProjectTemplate.Worker"
     schedule:
       interval: "weekly"
+    groups:
+      docker-worker:
+        patterns:
+          - "*"

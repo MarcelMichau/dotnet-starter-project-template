@@ -22,7 +22,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="**\*" Exclude="**\bin\**;**\obj\**;.vs\**;.vscode\**;**\*.user;.git\**;LICENSE;README.md;DotNetStarterProjectTemplate.Package.csproj" />
+		<Content Include="**\*" Exclude="**\bin\**;**\obj\**;.vs\**;.vscode\**;**\*.user;.git\**;eng\**;LICENSE;README.md;DotNetStarterProjectTemplate.Package.csproj" />
 		<Compile Remove="**\*" />
 		<None Include=".template.config\icon.png" Pack="true" PackagePath=""/>
 	</ItemGroup>

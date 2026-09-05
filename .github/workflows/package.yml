@@ -1,5 +1,7 @@
 name: Package
 
+# Publishing is a release operation. Dependency updates run CI, but do not
+# publish a package unless the package project (including its version) changes.
 on:
   workflow_dispatch:
   push:
@@ -32,6 +34,9 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           global-json-file: global.json
+
+      - name: Verify package version is synchronized
+        run: ./eng/verify-template-version.ps1
 
       - name: Create Template Package
         run: dotnet pack DotNetStarterProjectTemplate.Package.csproj --configuration Release --output ${{ env.NuGetDirectory }}

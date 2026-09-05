@@ -1,0 +1,30 @@
+name: Validate Template Version
+
+on:
+  pull_request:
+    paths:
+      - "DotNetStarterProjectTemplate.Package.csproj"
+      - "README.md"
+      - "eng/verify-template-version.ps1"
+  push:
+    branches:
+      - main
+    paths:
+      - "DotNetStarterProjectTemplate.Package.csproj"
+      - "README.md"
+      - "eng/verify-template-version.ps1"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Template Package Version
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Verify package version is synchronized
+        shell: pwsh
+        run: ./eng/verify-template-version.ps1
