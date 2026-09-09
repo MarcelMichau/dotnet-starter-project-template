@@ -65,19 +65,19 @@
       },
       "Scalar.AspNetCore": {
         "type": "Direct",
-        "requested": "[2.17.2, )",
-        "resolved": "2.17.2",
-        "contentHash": "ciW2HuRWJgNEecophHN9DvoRlTs/+8TNPhB6tQW1gmJWh/eoAIO0ys8XIxx7irUpIu3KRHZyxyuHstqqrTn1Tw=="
+        "requested": "[2.17.3, )",
+        "resolved": "2.17.3",
+        "contentHash": "TwAf1zy/MH2famozcDqk9+/jD37VAbonRXfnjAso0Q2YKeWtA0kH59WxhuevvAxWDL3jUU3TDpNmUFS2gF9bHw=="
       },
       "Scalar.AspNetCore.Microsoft": {
         "type": "Direct",
-        "requested": "[2.17.2, )",
-        "resolved": "2.17.2",
-        "contentHash": "FqYo4EFc+vOkrJBYtX+be/juod1L2PojnAClBzpLtnmLLT6Qiq+6Z7E2qVtgv63iT0v5FJWDbTm/yFjYn7vVyQ==",
+        "requested": "[2.17.3, )",
+        "resolved": "2.17.3",
+        "contentHash": "tiqCtAMMDowkuVyUYeBjoBMKEsPXS4Dfn9+LvnwZSCXkYra5FwBsO2uw/1GVQ2Jtq1vcEOOn+JQcNDvN4SWbbQ==",
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "10.0.0",
           "Microsoft.OpenApi": "2.7.5",
-          "Scalar.AspNetCore": "2.17.2"
+          "Scalar.AspNetCore": "2.17.3"
         }
       },
       "Asp.Versioning.Abstractions": {
