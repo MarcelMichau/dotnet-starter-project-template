@@ -36,15 +36,15 @@
       },
       "TUnit": {
         "type": "Direct",
-        "requested": "[1.70.1, )",
-        "resolved": "1.70.1",
-        "contentHash": "QRYzgfvYy2H0N6nyYSS72iRMtS8Uvq6Dli8g/86LBEwrzBCmG2phNmhq+DWxE7kTxJxUgKBCfVWysh57KpW06w==",
+        "requested": "[1.72.0, )",
+        "resolved": "1.72.0",
+        "contentHash": "puBSpCe4zDZo9pcKHH0XBltIfssLXA92fkSRv2WolDrCmcleSAjLfjTEHiP3rhuCA6Plf2YZ8T6GST1ltGO9LQ==",
         "dependencies": {
           "Microsoft.Testing.Extensions.CodeCoverage": "18.11.2",
           "Microsoft.Testing.Extensions.Telemetry": "2.4.1",
           "Microsoft.Testing.Extensions.TrxReport": "2.4.1",
-          "TUnit.Assertions": "1.70.1",
-          "TUnit.Engine": "1.70.1"
+          "TUnit.Assertions": "1.72.0",
+          "TUnit.Engine": "1.72.0"
         }
       },
       "Azure.Core": {
@@ -541,23 +541,23 @@
       },
       "TUnit.Assertions": {
         "type": "Transitive",
-        "resolved": "1.70.1",
-        "contentHash": "k9Tu6xbocRVdzM60gJDIg+1XmSTEQK8u2ZATW6iJac38PKD5GmeD0KHyFCA119j1qFHweBGm7zwSpejPvgx7Aw=="
+        "resolved": "1.72.0",
+        "contentHash": "JSxU/3kPE4eHaH+FGfzBOlDwS0G/yptC5XEDN1KBCekzp6vssvJpWpwrmf38Gb1xTnVIxmvZ83FQcduGqiI4xQ=="
       },
       "TUnit.Core": {
         "type": "Transitive",
-        "resolved": "1.70.1",
-        "contentHash": "TQyGeDImMqao+J1VtbVVQB4EbW7HrsIB4Tje7dfVz/AgDiHsQ5SYYLhgGmG7XD4wMDtepZJsifRScdF9z3f/Wg=="
+        "resolved": "1.72.0",
+        "contentHash": "JBN3edl/Kuf/kenQbkVgrPDcGr+LYcI11Ny55XJ+Ye67I8P934t6S1H7AJOVQFfHCtKDxbAg9hIlp6DHRmK09Q=="
       },
       "TUnit.Engine": {
         "type": "Transitive",
-        "resolved": "1.70.1",
-        "contentHash": "Xuhe6G7i+pOrk4p81thXMcUd6G6bgUUsYNr6C5VsOWOEHgbd50S1/yphZw5t+qQAkpMr33iSwF/ePpoe7vac7A==",
+        "resolved": "1.72.0",
+        "contentHash": "YJWfxR3fA3iwZdGliwcMXrSAY8kpka7Dr58PyVQoq73MAa+xsD7pSrkC7xZPcsE5GM+2USrd61lj+1LBrX0q0Q==",
         "dependencies": {
           "Microsoft.Testing.Extensions.TrxReport.Abstractions": "2.4.1",
           "Microsoft.Testing.Platform": "2.4.1",
           "Microsoft.Testing.Platform.MSBuild": "2.4.1",
-          "TUnit.Core": "1.70.1"
+          "TUnit.Core": "1.72.0"
         }
       },
       "dotnetstarterprojecttemplate.application": {
