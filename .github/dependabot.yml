@@ -18,6 +18,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      # Asp.Versioning.OpenApi 10.x requires Microsoft.OpenApi < 3.0, but
+      # Microsoft.AspNetCore.OpenApi 11.x requires Microsoft.OpenApi >= 3.11.
+      # Remove once Asp.Versioning supports .NET 11 / Microsoft.OpenApi 3.x:
+      # https://github.com/dotnet/aspnet-api-versioning/issues/1239
+      - dependency-name: "Microsoft.AspNetCore.OpenApi"
+        versions: [">= 11.0.0"]
+      - dependency-name: "Microsoft.OpenApi"
+        versions: [">= 3.0.0"]
     groups:
       nuget:
         patterns:
