@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [.NET 11 SDK](https://dotnet.microsoft.com/download)
 - [Docker](https://www.docker.com/get-started) (required by Aspire to run local containers)
 - [Aspire CLI](https://aspire.dev/docs/get-started/) (`dotnet tool install -g aspire`)
 
