@@ -27,14 +27,15 @@ updates:
         versions: [">= 11.0.0"]
       - dependency-name: "Microsoft.OpenApi"
         versions: [">= 3.0.0"]
-      # Scalar.AspNetCore.Microsoft 3.x requires Microsoft.AspNetCore.OpenApi
-      # >= 11.0.0 on net11.0, and Dependabot bumps it as a required dependency
-      # regardless of the ignore rule above (see PR #169). Ignore both Scalar
-      # packages so they stay in lockstep; remove alongside the rules above.
+      # Scalar.AspNetCore.Microsoft >= 2.21.0 adds a net11.0 target that requires
+      # Microsoft.AspNetCore.OpenApi >= 11.0.0, and Dependabot bumps it as a
+      # required dependency regardless of the ignore rule above (see PRs #169,
+      # #171). Hold both Scalar packages at 2.20.x so they stay in lockstep;
+      # remove alongside the rules above.
       - dependency-name: "Scalar.AspNetCore"
-        versions: [">= 3.0.0"]
+        versions: [">= 2.21.0"]
       - dependency-name: "Scalar.AspNetCore.Microsoft"
-        versions: [">= 3.0.0"]
+        versions: [">= 2.21.0"]
     groups:
       nuget:
         patterns:
