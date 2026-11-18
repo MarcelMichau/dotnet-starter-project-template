@@ -2,13 +2,6 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "aspire.cli": {
-      "version": "17.0.0",
-      "commands": [
-        "aspire"
-      ],
-      "rollForward": false
-    },
     "dotnet-ef": {
       "version": "11.0.0",
       "commands": [
@@ -20,6 +13,13 @@
       "version": "4.9.0",
       "commands": [
         "dotnet-outdated"
+      ],
+      "rollForward": false
+    },
+    "aspire.cli": {
+      "version": "17.0.0",
+      "commands": [
+        "aspire"
       ],
       "rollForward": false
     }

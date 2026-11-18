@@ -28,6 +28,7 @@ jobs:
         run: dotnet restore DotNetStarterProjectTemplate.slnx
 
       - name: Restore local .NET tools and prepare the Aspire bundle
+        # Keep the RID-specific Aspire CLI last in the manifest until dotnet/sdk#53783 is fixed.
         run: |
           dotnet tool restore
           dotnet tool run aspire setup --install-path "$HOME/.aspire"
