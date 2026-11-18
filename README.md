@@ -40,7 +40,7 @@ It has the following features & pre-configured defaults:
 
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
-dotnet new install MarcelMichau.Templates.DotNetStarterProject@3.0.1
+dotnet new install MarcelMichau.Templates.DotNetStarterProject@3.1.0
 ```
 
 After installation, create a new project using the template:
@@ -48,14 +48,11 @@ After installation, create a new project using the template:
 dotnet new mm-dotnet-starter -o MyAwesomeApp
 ```
 
-Change into the Aspire AppHost project
+Restore the local .NET tools and start the app from the generated project root.
 ```bash
-cd MyAwesomeApp\src\MyAwesomeApp.AppHost
-```
-
-Run the project
-```bash
-dotnet run
+cd MyAwesomeApp
+dotnet tool restore
+dotnet tool run aspire run
 ```
 
 ## Adding EF Core Migrations
