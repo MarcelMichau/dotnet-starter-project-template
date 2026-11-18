@@ -27,8 +27,10 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore DotNetStarterProjectTemplate.slnx
 
-      - name: Install Aspire CLI
-        run: dotnet tool install --global Aspire.Cli --version 17.0.0
+      - name: Restore local .NET tools and prepare the Aspire bundle
+        run: |
+          dotnet tool restore
+          dotnet tool run aspire setup --install-path "$HOME/.aspire"
 
       - name: Build
         run: dotnet build DotNetStarterProjectTemplate.slnx --no-restore

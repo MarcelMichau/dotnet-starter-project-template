@@ -48,10 +48,11 @@ After installation, create a new project using the template:
 dotnet new mm-dotnet-starter -o MyAwesomeApp
 ```
 
-Install the [Aspire CLI](https://aspire.dev/get-started/install-cli/) and start the app from the generated project root.
+Restore the local .NET tools and start the app from the generated project root.
 ```bash
 cd MyAwesomeApp
-aspire run
+dotnet tool restore
+dotnet tool run aspire run
 ```
 
 ## Adding EF Core Migrations
