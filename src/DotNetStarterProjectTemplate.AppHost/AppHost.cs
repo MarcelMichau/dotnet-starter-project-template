@@ -6,11 +6,11 @@ var database = builder.AddAzureSqlServer("sql-server")
     .RunAsContainer()
     .AddDatabase("database");
 
-var worker = builder.AddProject<Projects.DotNetStarterProjectTemplate_Worker>($"{Constants.AppAbbreviation}-worker")
+var worker = builder.AddDotnetProject($"{Constants.AppAbbreviation}-worker", "../DotNetStarterProjectTemplate.Worker/DotNetStarterProjectTemplate.Worker.csproj")
     .WithReference(database)
     .WaitFor(database);
 
-builder.AddProject<Projects.DotNetStarterProjectTemplate_Api>($"{Constants.AppAbbreviation}-api")
+builder.AddDotnetProject($"{Constants.AppAbbreviation}-api", "../DotNetStarterProjectTemplate.Api/DotNetStarterProjectTemplate.Api.csproj")
     .WithReference(database)
     .WaitFor(worker)
     .WithHttpHealthCheck("health")

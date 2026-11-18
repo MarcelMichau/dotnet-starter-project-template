@@ -6,7 +6,7 @@
 
 - [.NET 11 SDK](https://dotnet.microsoft.com/download)
 - [Docker](https://www.docker.com/get-started) (required by Aspire to run local containers)
-- [Aspire CLI](https://aspire.dev/docs/get-started/) (`dotnet tool install -g aspire`)
+- [Aspire CLI 17 or later](https://aspire.dev/get-started/install-cli/) (`dotnet tool install -g Aspire.Cli`)
 
 ## Getting Started
 
@@ -15,8 +15,7 @@
 From the repository root:
 
 ```bash
-cd src/{appName}.AppHost
-dotnet run
+aspire run
 ```
 
 Aspire will automatically start all required infrastructure (database containers, etc.) and launch
