@@ -38,6 +38,8 @@ It has the following features & pre-configured defaults:
 
 ## Getting Started
 
+Install the [.NET 11 SDK](https://dotnet.microsoft.com/download). To run the app and its end-to-end tests, start [Docker](https://www.docker.com/get-started) or use [WSLc 3.0.4.0 or later on Windows](https://aka.ms/aspire/containers).
+
 Install the [.NET template](https://www.nuget.org/packages/MarcelMichau.Templates.DotNetStarterProject):
 ```bash
 dotnet new install MarcelMichau.Templates.DotNetStarterProject@3.1.0
@@ -48,10 +50,23 @@ After installation, create a new project using the template:
 dotnet new mm-dotnet-starter -o MyAwesomeApp
 ```
 
-Restore the local .NET tools and start the app from the generated project root.
-```bash
+From the generated project root, restore the pinned .NET tools and install the [Aspire 17 CLI bundle](https://aspire.dev/get-started/aspire-sdk/#use-the-aspire-cli-bundle-for-orchestration-dependencies). Do this before running `dotnet build` or `dotnet test` on the solution or a project that builds the AppHost.
+
+```sh
 cd MyAwesomeApp
 dotnet tool restore
+dotnet tool run aspire setup --install-path "$HOME/.aspire"
+```
+
+If you use WSLc, select it in the PowerShell session where you run the app or its end-to-end tests.
+
+```powershell
+$env:ASPIRE_CONTAINER_RUNTIME = 'wslc'
+```
+
+Start the AppHost from the generated project root.
+
+```sh
 dotnet tool run aspire run
 ```
 
@@ -67,14 +82,13 @@ dotnet ef migrations add <migration-name> -p .\src\MyAwesomeApp.Application\ -s 
 ### Unit / Integration Tests
 
 ```bash
-dotnet test src\MyAwesomeApp.Tests
+dotnet test --project src/MyAwesomeApp.Tests
 ```
 
 ### End-to-End Tests (Aspire)
 
 ```bash
-dotnet test src\MyAwesomeApp.AppHost.Tests
+dotnet test --project src/MyAwesomeApp.AppHost.Tests
 ```
 
-> **Note:** E2E tests start the full Aspire application stack (including Docker containers).
-> Ensure Docker is running before executing them.
+These tests start the full Aspire application, including its SQL Server container. Set up the bundle and your container runtime as described above.
